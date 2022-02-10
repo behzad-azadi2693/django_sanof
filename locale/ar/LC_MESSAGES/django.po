@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-05 14:01+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: config/settings.py:151
+msgid "فارسی"
+msgstr "فارسی"
+
+#: config/settings.py:152
+msgid "العربیه"
+msgstr "العربیه"
+
+#: config/settings.py:153
+msgid "English"
+msgstr "English"
+
+#: sanof/apps.py:8 sanof/apps.py:9
+msgid "SANOF"
+msgstr "سانوف"
+
+#: sanof/forms.py:7
+msgid "This field is required"
+msgstr "هذه الخانة مطلوبه"
+
+#: sanof/forms.py:8
+msgid "This field is incorrect"
+msgstr "هذا الحقل غير صحيح"
+
+#: sanof/forms.py:9
+msgid "Field size larger than allowed"
+msgstr "حجم الحقل أكبر من المسموح به"
+
+#: sanof/forms.py:10
+msgid "Field size less than allowed"
+msgstr "حجم الحقل أقل من المسموح به"
+
+#: sanof/models.py:17
+msgid "category name english"
+msgstr "اسم الفئة باللغة الإنجليزية"
+
+#: sanof/models.py:18
+msgid "category name persian"
+msgstr "اسم الفئة الفارسية"
+
+#: sanof/models.py:19
+msgid "category name arabian"
+msgstr "اسم التصنيف عربي"
+
+#: sanof/models.py:20 sanof/models.py:88 sanof/models.py:176
+#: sanof/models.py:314 sanof/models.py:430
+msgid "description english"
+msgstr "وصف الإنجليزية"
+
+#: sanof/models.py:21 sanof/models.py:89 sanof/models.py:177
+#: sanof/models.py:315 sanof/models.py:431
+msgid "description persian"
+msgstr "وصف الفارسي"
+
+#: sanof/models.py:22 sanof/models.py:90 sanof/models.py:178
+#: sanof/models.py:316 sanof/models.py:432
+msgid "description arabian"
+msgstr "وصف عربي"
+
+#: sanof/models.py:23 sanof/models.py:74 sanof/models.py:175
+#: sanof/models.py:234 sanof/models.py:313 sanof/models.py:367
+#: sanof/models.py:483
+msgid "image"
+msgstr "صورة"
+
+#: sanof/models.py:30 sanof/models.py:31
+msgid "category"
+msgstr "الفئة"
+
+#: sanof/models.py:70
+msgid "which category"
+msgstr "أي فئة"
+
+#: sanof/models.py:71
+msgid "product name english"
+msgstr "اسم المنتج الإنجليزية"
+
+#: sanof/models.py:72
+msgid "product name persian"
+msgstr "اسم المنتج الفارسي"
+
+#: sanof/models.py:73
+msgid "product name arabian"
+msgstr "اسم المنتج عربي"
+
+#: sanof/models.py:75 sanof/models.py:172 sanof/models.py:231
+#: sanof/models.py:310 sanof/models.py:364 sanof/models.py:422
+msgid "title english"
+msgstr "العنوان باللغة الإنجليزية"
+
+#: sanof/models.py:76 sanof/models.py:173 sanof/models.py:232
+#: sanof/models.py:311 sanof/models.py:365 sanof/models.py:423
+msgid "title persian"
+msgstr "العنوان باللغة الفارسي"
+
+#: sanof/models.py:77 sanof/models.py:174 sanof/models.py:233
+#: sanof/models.py:312 sanof/models.py:366 sanof/models.py:424
+msgid "title arabian"
+msgstr "العنوان باللغة عربي"
+
+#: sanof/models.py:78
+msgid "Complies with standard"
+msgstr "يتوافق مع المعيار"
+
+#: sanof/models.py:79
+msgid "Package type english"
+msgstr "نوع الحزمة الإنجليزية"
+
+#: sanof/models.py:80
+msgid "Package type persian"
+msgstr "نوع الحزمة الفارسية"
+
+#: sanof/models.py:81
+msgid "Package type arabian"
+msgstr "نوع الحزمة عربي"
+
+#: sanof/models.py:82
+msgid "maintenance english"
+msgstr "اللغة الإنجليزية الصيانة"
+
+#: sanof/models.py:83
+msgid "maintenance persian"
+msgstr "اللغة فارسي الصيانة"
+
+#: sanof/models.py:84
+msgid "maintenance arabian"
+msgstr "اللغة عربي الصيانة"
+
+#: sanof/models.py:85
+msgid "consumption level english"
+msgstr "مستوى الاستهلاك باللغة الإنجليزية"
+
+#: sanof/models.py:86
+msgid "consumption level persian"
+msgstr "مستوى الاستهلاك باللغة الفارسية"
+
+#: sanof/models.py:87
+msgid "consumption level arabian"
+msgstr "مستوى الاستهلاك باللغة عربي"
+
+#: sanof/models.py:91
+msgid "safety english"
+msgstr "الإنجليزية السلامة"
+
+#: sanof/models.py:92
+msgid "safety persian"
+msgstr "الفارسية السلامة"
+
+#: sanof/models.py:93
+msgid "safety arabian"
+msgstr "عربي السلامة"
+
+#: sanof/models.py:94
+msgid "consumption english"
+msgstr "استهلاك اللغة الإنجليزية"
+
+#: sanof/models.py:95
+msgid "consumption persian"
+msgstr "استهلاك اللغة الفارسية"
+
+#: sanof/models.py:96
+msgid "consumption arabian"
+msgstr "استهلاك اللغة عربي"
+
+#: sanof/models.py:97
+msgid "properties english"
+msgstr "خصائص اللغة الإنجليزية"
+
+#: sanof/models.py:98
+msgid "properties persian"
+msgstr "خصائص اللغة الفارسية"
+
+#: sanof/models.py:99
+msgid "properties arabian"
+msgstr "خصائص اللغة عربي"
+
+#: sanof/models.py:100
+msgid "application english"
+msgstr "تطبيق اللغة الإنجليزية"
+
+#: sanof/models.py:101
+msgid "application persian"
+msgstr "تطبيق اللغة الفارسية"
+
+#: sanof/models.py:102
+msgid "application arabian"
+msgstr "تطبيق اللغة عربي"
+
+#: sanof/models.py:103
+msgid "specifications english"
+msgstr "المواصفات الإنجليزية"
+
+#: sanof/models.py:104
+msgid "specifications persian"
+msgstr "المواصفات الفارسية"
+
+#: sanof/models.py:105
+msgid "specifications arabian"
+msgstr "المواصفات عربي"
+
+#: sanof/models.py:106
+msgid "catalog english"
+msgstr "كتالوج الإنجليزية"
+
+#: sanof/models.py:107
+msgid "catalog persian"
+msgstr "كتالوج الفارسية"
+
+#: sanof/models.py:108
+msgid "catalog arabian"
+msgstr "كتالوج عربي"
+
+#: sanof/models.py:109
+msgid "to be displayed in navbar??"
+msgstr "ليتم عرضها في نافبار ؟؟"
+
+#: sanof/models.py:110
+msgid "keyword serching"
+msgstr "البحث عن الكلمات الرئيسية"
+
+#: sanof/models.py:116
+msgid "Product"
+msgstr "منتج"
+
+#: sanof/models.py:117
+msgid "Products"
+msgstr "منتجات"
+
+#: sanof/models.py:156
+msgid "which product??"
+msgstr "أي منتج ؟؟"
+
+#: sanof/models.py:157
+msgid "title for this link"
+msgstr "عنوان هذا الارتباط"
+
+#: sanof/models.py:158
+msgid "link from aparat"
+msgstr "ارتباط من ابارات"
+
+#: sanof/models.py:161
+msgid "Link"
+msgstr "وصلة"
+
+#: sanof/models.py:162
+msgid "Links"
+msgstr "الروابط"
+
+#: sanof/models.py:187 sanof/models.py:188
+msgid "News"
+msgstr "أخبار"
+
+#: sanof/models.py:235 sanof/models.py:375 sanof/models.py:425
+msgid "date"
+msgstr "تاريخ"
+
+#: sanof/models.py:236
+msgid "show in english???"
+msgstr "تظهر فی الإنجليزية ؟؟؟"
+
+#: sanof/models.py:237
+msgid "show in persian???"
+msgstr "تظهر فی الفارسية ؟؟؟"
+
+#: sanof/models.py:238
+msgid "show in arabian???"
+msgstr "تظهر فی عربي ؟؟؟"
+
+#: sanof/models.py:244
+msgid "Certificate"
+msgstr "شهادة"
+
+#: sanof/models.py:245
+msgid "Certificates"
+msgstr "الشهادات"
+
+#: sanof/models.py:282
+msgid "Question english"
+msgstr "سؤال اللغة الإنجليزية"
+
+#: sanof/models.py:283
+msgid "Answer english"
+msgstr "أجب الإنجليزية"
+
+#: sanof/models.py:285
+msgid "Question persian"
+msgstr "سؤال اللغة الفارسية"
+
+#: sanof/models.py:286
+msgid "Answer persian"
+msgstr "أجب الفارسية"
+
+#: sanof/models.py:288
+msgid "Question arabian"
+msgstr "سؤال اللغة عربي"
+
+#: sanof/models.py:289
+msgid "Answer arabian"
+msgstr "أجب عربي"
+
+#: sanof/models.py:292 sanof/models.py:293
+msgid "Frequently Asked Questions"
+msgstr "أسئلة مكررة"
+
+#: sanof/models.py:323
+msgid "Service"
+msgstr "خدمة"
+
+#: sanof/models.py:324
+msgid "Services"
+msgstr "خدمات"
+
+#: sanof/models.py:368
+msgid "slider english"
+msgstr "المنزلق الإنجليزية"
+
+#: sanof/models.py:369
+msgid "slider persian"
+msgstr "المنزلق الفارسية"
+
+#: sanof/models.py:370
+msgid "slider arabian"
+msgstr "المنزلق عربي"
+
+#: sanof/models.py:371
+msgid "to be displayed??"
+msgstr "ليتم عرضها ؟؟"
+
+#: sanof/models.py:378
+msgid "Slider"
+msgstr "المنزلق"
+
+#: sanof/models.py:379
+msgid "Sliders"
+msgstr "المتزلجون"
+
+#: sanof/models.py:426
+msgid "avatar"
+msgstr "الصورة الرمزية"
+
+#: sanof/models.py:427
+msgid "address english"
+msgstr "العنوان باللغة الإنجليزية"
+
+#: sanof/models.py:428
+msgid "address persian"
+msgstr "العنوان باللغة الفارسية"
+
+#: sanof/models.py:429
+msgid "address arabian"
+msgstr "العنوان باللغة عربي"
+
+#: sanof/models.py:438 sanof/models.py:439
+msgid "Portfolio"
+msgstr "ملف"
+
+#: sanof/models.py:482
+msgid "which portfolio"
+msgstr "التي ملف"
+
+#: sanof/models.py:486 sanof/models.py:487
+msgid "Portfolio images"
+msgstr "الصور ملف"
+
+#: sanof/models.py:514
+msgid "your name"
+msgstr "اسمك"
+
+#: sanof/models.py:515
+msgid "your email"
+msgstr "بريدك الالكتروني"
+
+#: sanof/models.py:516
+msgid "Phone number must be entered in the format: '+989010000000'. Up to 15 digits allowed."
+msgstr "يجب إدخال رقم الهاتف بالتنسيق:+989010000000 يسمح بحد أقصى 15 رقمًا."
+
+#: sanof/models.py:517
+msgid "your phone number"
+msgstr "رقم تليفونك"
+
+#: sanof/models.py:518
+msgid "your message"
+msgstr "رسالتك"
+
+#: sanof/models.py:519
+msgid "Reviewed??"
+msgstr "استعرض ؟؟"
+
+#: sanof/models.py:523 sanof/models.py:524
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: sanof/views.py:120
+msgid "Your message was successfully registered"
+msgstr "تم تسجيل رسالتك بنجاح"

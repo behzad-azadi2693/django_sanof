@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load jalali_tags %}
+{% load change_character %}
+
+{% block hreflang %}fa-ir{% endblock %} {% block lang %}fa{% endblock %}
+
+{% block title %}
+    {% if news %} مشاهده خبر
+    {% elif service %} مشاهده سرویس
+    {% elif slider %} مشاهده مقاله
+    {% elif portfolio %} مشاهده نمونه کار
+    {% endif %}
+{% endblock %}
+
+{% block meta_description %}صفحه خانه وبسابت شرکت فنی مهندسی سانوف تولیدی، بازرگانی، فنی مهندسی کاشت بولت و آرماتور، افزایش مقطع، افزایش زیر بنا، ایجاد تراس، رفع ضعف های طراحی و اجرایی{% endblock meta_description %}
+{% block meta_keywords %}sanof,شرکت فنی مهندسی سانوف تولید، بازرگانی، فنی مهندسی کاشت بولت و آرمیچر، افزایش سطح مقطع، افزایش زیرساخت، احداث تراس، رفع نقاط ضعف طراحی و اجرایی، سانوف، شرکت فنی مهندسی سانوف، بتن آماده، استحکامات سنندج، بتن ریزی ساختمان و بتن ریزی بتن سنندج {% endblock meta_keywords %}
+
+{% block mystyle %} 
+<script src="{% static 'js/lightbox.js' %}"></script>
+<link href="{% static 'css/lightbox.css' %}" rel="stylesheet"/>
+
+<script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'disableScrolling': true
+    })
+</script>
+{% endblock %}
+
+{% block body %}
+{% if slider %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:sliders' %}">مقالات فنی و مهندسی</a>
+    </div>
+
+        <div class="SiteMapElement_3">
+            <a href="{% url 'sanof:slider' slider.slug_en %}">{{ slider.title_fa }}   </a>
+        </div>
+
+</div>
+
+<div class="ArticleDetailText col-lg-8 col-md-10 col-lg-push-2 col-md-push-1 col-sm-12 col-xs-12  ">
+    <h1 style="margin-bottom: 15px;font-size: 28px; font-weight: bold">{{ slider.title_fa }}</h1>
+    <p dir="RTL" style="text-align:justify">&nbsp;</p>
+    {{ slider.description_fa|safe }}
+
+</div>
+{% elif news %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:newses' %}">اخبـار و رویدادها</a>
+    </div>
+
+        <div class="SiteMapElement_3">
+            <a href="{% url 'sanof:news' news.slug_en %}"> {{ news.title_fa }}</a>
+        </div>
+
+</div>
+<div class="row MainContentBody">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 0; padding-right: 0;">
+        <div class="DisplayEventAndNewsBoxParent">
+
+            <div id=EventAndNews4422 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayNewsAndEventBox">
+                <div id="ProductTitleAndExplain" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+                        <span class="glyphicon glyphicon-stop IconFloatSetting GetNewsAndEventDetail_Class1"></span>
+                        <div class="EventAndNewsTitleMark">
+                            <h2 class="FontSize18 MarginTop5 MarginBottom5">
+                                {{ news.title_fa }}
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div id=EventAndNewsMainExplain4422 class="EventAndNewsShortExplain col-lg-10 col-md-12 col-sm-12 col-xs-12  pull-right">
+                        <div id="EventAndNewsExplain" class="EventAndNewsExplainBox">
+                            {{ news.description_fa|safe }}
+                        </div>
+                    </div>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif service %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:services' %}">خدمات</a>
+    </div>
+
+        <div class="SiteMapElement_3">
+            <a href="{% url 'sanof:service' service.slug_en %}">{{ service.title_fa }}</a>
+        </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right MainContentBody GetProjectGroupMember_Class2">
+        <div class="GetProjectGroupMember_Class3">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProjectBox">
+                <div class="ProjectOrGroupLinkBoxParent ProjectLinkBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
+                    {{ service.description_fa|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif portfolio %}
+
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:portfolos' %}"> پروژه ها </a>
+    </div>
+
+        <div class="SiteMapElement_3">
+            <a href="{% url 'sanof:portfolo' portfolio.slug_en %}">{{ portfolio.title_fa }}</a>
+        </div>
+
+</div>
+<div class="row MainContentBody">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 0; padding-right: 0;">
+        <div class="DisplayEventAndNewsBoxParent">
+
+            <div id=EventAndNews4422 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayNewsAndEventBox">
+                <div id="ProductTitleAndExplain" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+                        <span class="glyphicon glyphicon-stop IconFloatSetting GetNewsAndEventDetail_Class1"></span>
+                        <div class="EventAndNewsTitleMark">
+                            <h2 class="FontSize18 MarginTop5 MarginBottom5">
+                                {{ portfolio.title_fa }}
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div id=EventAndNewsMainExplain4422 class="EventAndNewsShortExplain col-lg-10 col-md-12 col-sm-12 col-xs-12  pull-right">
+                        <div id="EventAndNewsExplain" class="EventAndNewsExplainBox">
+                            {{ portfolio.description_fa|safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px; padding-right: 50px">
+
+                <div id="EventAndNewsImageBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
+
+                        <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
+                            <a href="{% portfolio.image.url %}"  data-lightbox="{{ portfolio.title_fa }}" data-title="">
+                                <img src="{{ portfolio.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
+                            </a>
+                        </div>
+                        {% for img in images %}
+                            <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
+                                <a href="{% img.image.url %}" data-lightbox="" data-title="">
+                                    <img src="{{ img.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
+                                </a>
+                            </div>
+                        {% endfor %}
+                </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% load static %}
+{% load list_menu %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% load i18n_urls %}
+
+<!DOCTYPE HTML>
+
+<html lang="{{ LANGUAGE_CODE }}">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible"
+				content="IE=edge">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <!-- SEO MetaTags -->
+		
+		<meta name="robots" content="index, follow" />
+		
+		<meta name="description" mcontent="{% block meta_description %}{% endblock meta_description %}" />
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+		<meta name="keywords" content="{% block meta_keywords %} {% endblock meta_keywords %}" />
+		<link rel="alternate" hreflang="{%block hreflang%}{% endblock %}" href="https://sanof.com/{% block lang %}{% endblock %}/">
+	<title>SANOF |{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105060993-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments) };
+
+        gtag('js', new Date());
+        gtag('config', 'UA-105060993-1');
+    </script>
+
+    {% if LANGUAGE_CODE == 'en' %}
+        <link href="{% static 'css/style_ltr.css' %}" rel="stylesheet"/>
+    {% else %}
+        <link href="{% static 'css/style_rtl.css' %}" rel="stylesheet"/>
+    {% endif %}
+    <script src="{% static 'js/sanof.js' %}"></script>
+
+    
+	{% block mystyle %}  {% endblock %}
+	{% block meta %} {% endblock %}
+	</head>
+	<body>
+		{% list_menu request %}
+		{% include 'include/msg.html' %}
+
+
+        {% block body %} {% endblock %}
+
+        {% include 'include/footer.html' %}
+
+        {% block javascript %} {% endblock %}
+        <!-- jQuery -->
+        </body>
+</html>

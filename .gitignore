@@ -1,0 +1,8 @@
+sbenv/
+venv/
+.git
+db*
+__pycache__/
+000*
+media/
+static/

@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block hreflang %}fa-ir{% endblock %} {% block lang %}fa{% endblock %}
+
+{% block title %}صفحه الرئيسية{% endblock %}
+
+{% block meta_description %}الصفحة الرئيسية لشركة  ، التصنيع ، التجارة ، الهندسة التقنية لزراعة البراغي والحديد ، زيادة المقطع العرضي ، زيادة البنية التحتية ، إنشاء شرفة ، إزالة نقاط الضعف في التصميم والتنفيذي {% endblock meta_description %}
+{% block meta_keywords %}sanof,شركة سانوف للهندسة الفنية الإنتاج والتجارة والهندسة الفنية لزراعة البراغي والحديد ، زيادة المقطع العرضي ، زيادة البنية التحتية ، إنشاء المدرجات ، إزالة نقاط الضعف في التصميم والتنفيذ ، سانوف ، سانوف ، شركة سانوف الهندسية الفنية ، الخرسانة الجاهزة ، تحصينات سنندج ، صب الخرسانة والبناء والخرسانة سنندج ,{% endblock meta_keywords %}
+
+{% block body %}
+<style>
+    #uploadImageLink:hover { text-decoration: none; }
+</style>
+
+<div class="row Index_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class2">
+
+        <div id="carousel-example-generic" class="carousel " data-ride="carousel">
+          
+            <div class="carousel-inner">
+               
+
+                    <video autoplay="autoplay" preload="auto" loop muted class="img-responsive">
+                        <source src="/SliderPictures/Final-FirstPage.mp4" type="video/mp4" />
+                    </video>
+              
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div><!-- /carousel -->
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class5">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePage">
+        <div>
+
+            <h1 style="font-size: 22px">
+                    <span class="glyphicon glyphicon-ok-sign IconFloatSetting"></span>
+                    SANOF حول شركة الهندسة الفنية
+            </h1>
+
+        </div>
+        <p>
+            بدأت المجموعة المذكورة أعلاه نشاطها في عام ۲۰۰۲ تحت اسم عيادة البناء الشامل - - مركز هندسة المواد (مورد لمعدات ومواد البناء الحديثة ، ويوفر المعرفة التقنية والخدمات التنفيذية) وفي عام ۲۰۱۱ مع إنشاء شركة سانوف المهندسين - شركة مساهمة خاصة ، أخذ الاعتماد على المعرفة والمرافق المتاحة خطوة نحو تنمية بلدنا الحبيب إيران ليكون لها دور صغير في هذا المجال.
+            <a href="/fa-IR/Company/">تعرف على المزيد حول هذا ...</a>
+        </p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePageInAnotherPage">
+        <div>
+
+            <h4>
+                <span class="glyphicon glyphicon-ok-sign IconFloatSettingReverse" style="font-size: 22px;"></span>
+                 About Engineering Technical Company SANOF
+            </h4>
+        </div>
+        <p>
+            The above group started its activity in 2002 under the name of Inclusive Construction Clinic - Materials Engineering Center (supplier of modern construction equipment and materials, providing technical knowledge 
+            <a href="/en-US/Company/">see more ...</a>
+        </p>
+    </div>
+
+    <div class="FirstPageContentBlock">
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/products.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="  محصولات " title="  محصولات "/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-qrcode IconFloatSetting"></span>
+                        <a href="{% url 'sanof:products' %}" >  منتجات </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/news.png' %}" style="width:100%" class="img-responsive Index_Class6" alt=" أخبار وأحداث" title=" أخبار وأحداث"/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-globe IconFloatSetting"></span>
+                        <a href="{% url 'sanof:newses' %}"> أخبار وأحداث </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/certificate.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="المعايير والشهادات" title="االمعايير والشهاداتا"/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-certificate IconFloatSetting"></span>
+                        <a href="{% url 'sanof:certificates' %}"> المعايير والشهادات </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="FirstPageContentBlock">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/slider_4.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="مقالات فنية وهندسية" title="مقالات فنية وهندسية"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting">مقالات فنية وهندسية</span>
+                        <a href="{% url 'sanof:sliders' %}"></a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/portfolio.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="المشاريع المنجزة والجارية" title="المشاريع المنجزة والجارية"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-cog IconFloatSetting"></span>
+                        <a href="{% url 'sanof:portfolios' %}">المشاريع المنجزة والجارية</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/services.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات" title="خدمات"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-blackboard IconFloatSetting"></span>
+                        <a href="{% url 'sanof:services' %}">خدمات </a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% for qst in questions %}
+
+<div id=RepetitveQuestion2 class="col-lg-10 col-md-10  col-lg-pull-1 col-md-pull-1 col-sm-12 col-xs-12 pull-right RepetitveQuestionBox">
+    <div id=RepetitveQuestionBox2 class="DisplayRepetitveQuestionBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
+        <div class="RepetitveQuestion">
+            {{ qst.question_en }}
+            <span class="glyphicon glyphicon-question-sign IconFloatSetting FontSize18"></span>
+        </div>
+        <br/>
+        <div class="RepetitveAnswer pull-right ">
+            <img src="{% static 'icons/questions.png' %}" class="QuestionPNGIcon" alt=""/>
+            {{ qst.answer_ar|safe }}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

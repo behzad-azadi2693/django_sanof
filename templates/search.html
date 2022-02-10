@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% load i18n_urls %}
+
+{% block title %} 
+{% if LANGUAGE_CODE == 'fa' %} جستجو {% endif %}
+{% if LANGUAGE_CODE == 'en' %} search {% endif %}
+{% if LANGUAGE_CODE == 'ar' %} البحث {% endif %}
+{% endblock %}
+
+{% block meta_description %}صفحه خانه وبسابت شرکت فنی مهندسی سانوف تولیدی، بازرگانی، فنی مهندسی کاشت بولت و آرماتور، افزایش مقطع، افزایش زیر بنا، ایجاد تراس، رفع ضعف های طراحی و اجرایی{% endblock meta_description %}
+{% block meta_keywords %}sanof,شرکت فنی مهندسی سانوف تولید، بازرگانی، فنی مهندسی کاشت بولت و آرمیچر، افزایش سطح مقطع، افزایش زیرساخت، احداث تراس، رفع نقاط ضعف طراحی و اجرایی، سانوف، شرکت فنی مهندسی سانوف، بتن آماده، استحکامات سنندج، بتن ریزی ساختمان و بتن ریزی بتن سنندج {% endblock meta_keywords %}
+
+{% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
+    <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+        <div class="SiteMapElement_1">
+            <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+        </div>
+
+        <div class="SiteMapElement_2">
+                <a href="{% url 'sanof:search' %}">نتیجه جستجو</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+            <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+            {% if products %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right" style="color: rgb(83, 83, 83); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;">برای عبارت مورد نظر شما {{ searchs.counter }} نتیجه یافت شد</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                    {% for search in products %}   
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-right SearchWordLinkExplain">
+                        <p dir="RTL" style="text-align:justify"><span style="font-size:16px">{{ search.title_fa }}</span></p>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-right SearchWordLink">
+                        <a href="{% url 'sanof:product' search.slug_en %}">{{ search.name_fa }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right" style="color: rgb(167, 61, 61); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;">برای عبارت مورد نظر شما  نتیجه ای یافت نشد</div>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if LANGUAGE_CODE == 'ar' %}
+    <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+        <div class="SiteMapElement_1">
+            <a href="{% url 'sanof:index' %}">صفحه الرئيسية</a>
+        </div>
+
+        <div class="SiteMapElement_2">
+                <a href="{% url 'sanof:search' %}">نتيجة البحث</a>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+            <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+                {% if products %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right" style="color: rgb(83, 83, 83); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;"> تم العثور على  {{ searchs.counter }} نتيجة لمصطلح البحث الخاص بك</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                    {% for src in searchs %}   
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-right SearchWordLinkExplain">
+                        <p dir="RTL" style="text-align:justify"><span style="font-size:16px">{{ search.title_fa }}</span></p>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-right SearchWordLink">
+                        <a href="{% url 'sanof:product' search.slug_en %}">{{ search.name_fa }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right" style="color: rgb(138, 41, 41); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;">لم يتم العثور على نتائج لمصطلح البحث الخاص بك </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if LANGUAGE_CODE == 'en' %}
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:search' %}">result search</a>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left">
+        <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+            {% if products %}
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left" style="color: rgb(83, 83, 83); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;">{{ searchs.counter }} results found for your search term</div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                {% for search in searchs %}   
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-left SearchWordLinkExplain">
+                    <p dir="RTL" style="text-align:justify"><span style="font-size:16px">{{ search.title_en }}</span></p>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12  pull-left SearchWordLink">
+                    <a href="{% url 'sanof:product' search.slug_en %}">{{ search.name_en }}</a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left" style="color: rgb(177, 67, 67); font-family: arial; font-size: 20px; font-weight: bold; margin-bottom: 20px;">No results were found for your search term</div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

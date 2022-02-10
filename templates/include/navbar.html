@@ -1,0 +1,842 @@
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% load i18n_urls %}
+
+
+{% if LANGUAGE_CODE == 'fa' %}
+<div class="container-fluid">
+	<input id="LanguageCulture" type="hidden" value="fa" />
+	<input id="baseUrl" type="hidden" value=/ />
+
+	<div class="row">
+		<div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right SiteNavigation" style="padding-top: 5px; text-align: center;">
+			<div style="margin-top: 0;">
+				<a title="شرکت صنایع شیمی ساختمان سانوف" href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo.png' %}" alt="شرکت صنایع شیمی ساختمان سانوف" title="شرکت صنایع شیمی ساختمان سانوف" style="width:100%;height: 60px;" />
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="SiteNavigationDiv" class="row  SiteNavigationParent">
+		<div>
+			<input id="MobileMenuOpenCloseFlag" type="hidden" value="0" />
+			<div id="MobileMenu" class="hidden-lg hidden-md hidden-sm col-xs-12 xs-UserMenu  pull-right text-right">
+					<div class="ui-select">
+						<select id="languageSelectDrpMobile" class="col-xs-2" style="background-color: yellow; border: none; color: black; float: left; font-size: 14px; text-align: center;">
+							{% for language_code, language_name in LANGUAGES %}
+								<option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}>{{ language_code }} </option>
+							{% endfor %}
+						</select>
+					</div>
+														
+				<div class="col-xs-1 pull-right" id="MobileMenuButton">
+					<span class="glyphicon glyphicon-menu-hamburger xs-UserMenuIcon"></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-lg-2 col-md-2 col-sm-3 hidden-xs pull-right SiteNavigation" style="padding-top: 0; text-align: center;">
+			<div class="hidden-lg col-md-12 col-sm-12 col-lg-12" style="height: 10px;"></div>
+			<div style="margin-top: 5px;">
+				<a title="شرکت صنایع شیمی ساختمان سانوف" href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo.png' %}" class="img-responsive" alt="شرکت فنی و مهندسی SANOF" title="شرکت فنی و مهندسی SANOF" style="width:100%;height: 55px;" />
+				</a>
+			</div>
+		</div>
+
+
+		<div title="صفحه اصلی" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+		<a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+		</div>
+
+		<div id="ProductAndServices" title="محصولات" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			محصولات
+		</div>
+
+		<div id="NewChemicalProduct" titleUsefullLink="مقالات فنی" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			مقالات فنی
+		</div>
+
+		<div id="AboutAbadgrarn" title="درباره سانوف" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+		<a href="{% url 'sanof:about' %}">درباره مـا</a>	
+		</div>
+
+		<div id="ContactAbadgaran" title="تماس با مـا" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			تماس با مـا
+		</div>
+
+		<div id="" title="" class="col-lg-1 col-md-1 hidden-sm hidden-xs pull-right SiteNavigation" style="cursor: auto">
+		</div>
+
+		<div id="LangugeSelect" title="" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation CultureChangButton" style="padding-top: 15px;">
+			<div class="col-lg-12 col-md-12 col-sm-8 pull-right" style="font-size: 14px !important; padding-left: 0; padding-right: 0;">
+				<div class="ui-select">
+					<select id="languageSelectDrp" style="background-color: yellow; border: none; color: black; direction: rtl; font-size: 14px; text-align: right;">
+						{% for language_code, language_name in LANGUAGES %}
+                        	<option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}> {{ language_name }} </option>
+						{% endfor %}
+					</select>
+					<span class="glyphicon glyphicon-globe" style="font-size: 14px; padding: 2px;"></span>
+				</div>
+			</div>
+		</div>
+            <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs" style='background-color:yellow'>
+                    <a title="sanof Construction Chemical " href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo1.png' %}" alt="sanof Construction Chemical " style="width:80%; height:65px" title="sanof Construction Chemical " />
+				</a>
+            </div>
+			<div id="SearchBox" class="col-lg-12 col-md-12 col-sm-12 hidden-xs pull-right SiteNavigation" style="padding-top: 10px;">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 SearchParentDiv">
+					<div id="SearchButton" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 HeaderSearchIcon text-center">
+						<div class="SearchIconButton">
+							<span class="glyphicon glyphicon-search"></span>
+						</div>
+					</div>
+					<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pull-right">
+						<input class="col-lg-12 col-md-12 col-sm-12 col-xs-12 HeaderSearchText" id="HeaderSearchText" name="HeaderSearchText" placeholder="  جستجو کنید" type="text" value="" />
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+	<div id="ExpandMenuDivParent" class="row">
+		<input id="MenuTabOpenId" type="hidden" value="" />
+
+		<div id="ProductAndServicesExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right ExpandMenuDivHidden">
+			<div class="row">
+			{% for cat in category %}
+				<div id="ProductMenuBox{{cat.id}}" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox1-Header">
+						<span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+						<a href="{% url 'sanof:categories' cat.slug_en %}">{{ cat.name_fa }}</a>
+					</div>
+					<div id="ProductMenuBox{{cat.id}}-Product" class="ProductLinkDiv">
+						{% for pro in products %}
+							{% if pro.category == cat %}
+								 <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_fa }}</a>
+							{% endif %}
+						{% endfor %}
+					</div>		
+				</div>
+			{% endfor %}
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  MegaMenuDivider"></div>
+			<div class="row">
+				<div id="ProductMenuBox7" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox7-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox7-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox8" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox8-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox8-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox9" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox9-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox9-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox10" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox10-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox10-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox11" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox11-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox11-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox12" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox12-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox12-Product">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="ContactAbadgaranExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+			<div id="OfficeContact" class="col-lg-5 col-md-5 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-right text-right">
+				<div class="ContactHeader">
+
+					<div class="ContactTitle">
+						<span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+						<a href="{% url 'sanof:contact_us' %}">دفتر مرکزی</a>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-right">
+							<div class="ContactFieldBlock">
+								<span class="ContactDetailTitle"> نشانی </span>
+								سنندج – خیابان ادب، نرسیده به چهار راه جام جم
+								، کوچه ویلا ، پ19 ساختمان مهندسین سانوف، ط 2							
+							</div>
+							<br />
+							<div class="ContactFieldBlock">
+								<span class="ContactDetailTitle">تلفن </span>
+								۰۸۷-۱۶۶۲۹۵۶۵
+							</div>
+							<br />
+
+								<div class="ContactFieldBlock" style="direction: ltr;">
+									sanofengineers82@gmail.com.com
+									<span class="ContactDetailTitle"> آدرس ایمیل</span>
+
+
+								</div>
+							
+							<br />
+							<div class="ContactFieldBlock">
+								<a class="SeeOnMap" href="https://goo.gl/maps/jdMPCqtyVqovuRaC7" target="_blank">
+									<span class="glyphicon glyphicon-map-marker"></span>
+									بر روی نقـشه ببینید 
+
+								</a>
+							</div>
+						</div>
+
+						
+					</div>
+
+				</div>
+			</div>
+
+			
+
+
+			<div id="CustomerVoice" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-right text-right">
+				<div class="ContactHeader">
+
+					<div class="ContactTitle">
+						<span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+						<a href="{% url 'sanof:contact' %}">صدای مشـتری</a>
+
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right ContactFieldBlock JustifyText">
+						در صورت عدم رضایت از محصولات شرکت SANOF یا عدم کفایت فنی محصولات در پروژه و یا کار خود ، لطفا شکایت خود را با جزییات ثبت نمایید.
+						پیام شما قطعا توسط کارشناس و یا واحد مربوطه پیگیری خواهد شد.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="NewChemicalProductExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+
+			<div class="ProductGroupHeader" id="NewChemicalProduct-Header">
+
+			</div>
+			
+			<div class="ProductLinkDiv" id="NewChemicalProduct1-Product">
+				{% for sld in sliders %}
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right" style="padding-top:5px;padding-bottom:5px;direction:rtl;">
+						<span class='glyphicon glyphicon-pencil IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 14px;'></span>
+						<a href="{% url 'sanof:slider' sld.slug_en %}" style="font-size: 15px; margin-top: 10px;">{{ sld.title_fa }}</a>
+				</div>
+				{% endfor %}
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right" style="padding-top:25px;padding-bottom:5px;direction:rtl; font-weight:bold;">
+					<span class='glyphicon glyphicon-stop IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 16px;'></span>
+					<a href="{% url 'sanof:sliders' %}" style="font-size: 16px; margin-top: 10px;">مشاهده صفحه مربوط به مقالات شرکت فنی مهندسی SANOF</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<div>
+		
+{% endif %}
+
+{% if LANGUAGE_CODE == 'ar' %}
+<div class="container-fluid">
+	<input id="LanguageCulture" type="hidden" value="ar" />
+	<input id="baseUrl" type="hidden" value=/ />
+
+	<div class="row">
+		<div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right SiteNavigation" style="padding-top: 5px; text-align: center;">
+			<div style="margin-top: 0;">
+				<a title="شرکت صنایع شیمی ساختمان سانوف" href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo.png' %}" alt="شرکت صنایع شیمی ساختمان سانوف" title="شرکت صنایع شیمی ساختمان سانوف" style='width:100%; height:60px' />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="SiteNavigationDiv" class="row  SiteNavigationParent">
+		<div>
+			<input id="MobileMenuOpenCloseFlag" type="hidden" value="0" />
+			<div id="MobileMenu" class="hidden-lg hidden-md hidden-sm col-xs-12 xs-UserMenu  pull-right text-right">
+					<div class="ui-select">
+						<select id="languageSelectDrpMobile" class="col-xs-2" style="background-color: yellow; border: none; color: black; float: left; font-size: 14px; text-align: center;">
+							{% for language_code, language_name in LANGUAGES %}
+                            <option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}> {{ language_code }} </option>
+							{% endfor %}
+						</select>
+					</div>
+														
+				<div class="col-xs-1 pull-right" id="MobileMenuButton">
+					<span class="glyphicon glyphicon-menu-hamburger xs-UserMenuIcon"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-2 col-sm-3 hidden-xs pull-right SiteNavigation" style="padding-top: 0; text-align: center;">
+			<div class="hidden-lg col-md-12 col-sm-12 col-lg-12" style="height: 10px;"></div>
+			<div style="margin-top: 5px;">
+				<a title="شرکت صنایع شیمی ساختمان سانوف" href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo.png' %}" class="img-responsive" alt="شرکت صنایع شیمی ساختمان سانوف" title="شرکت صنایع شیمی ساختمان سانوف" style="width:100%; height:55px" />
+				</a>
+			</div>
+		</div>
+
+
+		<div title="صفحه اصلی" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+		<a href="{% url 'sanof:index' %}">الصفحة الرئيسية</a>
+		</div>
+
+		<div id="ProductAndServices" title="محصولات" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			المنتجات
+		</div>
+
+		<div id="NewChemicalProduct" titleUsefullLink="مقالات فنی" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			مقالات فنية
+		</div>
+
+		<div id="AboutAbadgrarn" title="درباره سانوف" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			<a href="{% url 'sanof:about' %}">حول الشركة</a>	
+		</div>
+
+		<div id="ContactAbadgaran" title="تماس با مـا" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation SiteNavigationTextBox">
+			اتصل بنا
+		</div>
+
+		<div id="" title="" class="col-lg-1 col-md-1 hidden-sm hidden-xs pull-right SiteNavigation" style="cursor: auto">
+		</div>
+
+		
+		<div id="LangugeSelect" title="" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-right SiteNavigation CultureChangButton" style="padding-top: 15px;">
+			<div class="col-lg-12 col-md-12 col-sm-8 pull-right" style="font-size: 14px !important; padding-left: 0; padding-right: 0;">
+				<div class="ui-select">
+					<select id="languageSelectDrp" style="background-color: yellow; border: none; color: black; direction: rtl; font-size: 14px; text-align: right;">
+						{% for language_code, language_name in LANGUAGES %}
+                        <option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}> {{ language_name }} </option>
+						{% endfor %}
+					</select>
+					<span class="glyphicon glyphicon-globe" style="font-size: 14px; padding: 2px;"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs" style='background-color:yellow'>
+                    <a title="sanof Construction Chemical " href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo1.png' %}" alt="sanof Construction Chemical " style="width:80%; height:65px" title="sanof Construction Chemical " />
+				</a>
+            </div>
+            <div id="SearchBox" class="col-lg-12 col-md-12 col-sm-12 hidden-xs pull-right SiteNavigation" style="padding-top: 10px;">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 SearchParentDiv">
+					<div id="SearchButton" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 HeaderSearchIcon text-center">
+						<div class="SearchIconButton">
+							<span class="glyphicon glyphicon-search"></span>
+						</div>
+					</div>
+					<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pull-right">
+						<input class="col-lg-12 col-md-12 col-sm-12 col-xs-12 HeaderSearchText" id="HeaderSearchText" name="HeaderSearchText" placeholder="  جستجو کنید" type="text" value="" />
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+	<div id="ExpandMenuDivParent" class="row">
+		<input id="MenuTabOpenId" type="hidden" value="" />
+
+		<div id="ProductAndServicesExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right ExpandMenuDivHidden">
+			<div class="row">
+				{% for cat in category %}
+				<div id="ProductMenuBox{{cat.id}}" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox1-Header">
+						<span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+						<a href="{% url 'sanof:categories' cat.slug_en %}">{{ cat.name_ar }}</a>
+					</div>
+
+					<div id="ProductMenuBox{{cat.id}}-Product" class="ProductLinkDiv">
+						{% for pro in products %}
+							{% if pro.category == cat %}
+								<a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_ar }}</a>
+							{% endif %}
+						{% endfor %}
+					</div>		
+				
+				</div>
+				{% endfor %}
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  MegaMenuDivider"></div>
+			<div class="row">
+				<div id="ProductMenuBox7" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox7-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox7-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox8" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox8-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox8-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox9" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox9-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox9-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox10" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox10-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox10-Product">
+
+					</div>
+				</div>
+
+
+				<div id="ProductMenuBox11" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox11-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox11-Product">
+
+					</div>
+				</div>
+
+				<div id="ProductMenuBox12" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right text-right">
+					<div class="ProductGroupHeader" id="ProductMenuBox12-Header">
+
+					</div>
+					<div class="ProductLinkDiv" id="ProductMenuBox12-Product">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="ContactAbadgaranExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+			<div id="OfficeContact" class="col-lg-5 col-md-5 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-right text-right">
+				<div class="ContactHeader">
+
+					<div class="ContactTitle">
+						<span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+						<a href="{% url 'sanof:contact_us' %}">المكتب المركزي</a>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-right">
+							<div class="ContactFieldBlock">
+								<span class="ContactDetailTitle"> تبوك </span>
+								سنندج - شارع ادب غير بعيد عن تقاطع جام جام
+								فيلا أليى رقم 19 مبنى سانوف انجينيرز الدور الثانى
+							</div>
+							<br />
+							<div class="ContactFieldBlock">
+								<span class="ContactDetailTitle">هاتف </span>
+								+98-8716629565
+							</div>
+							<br />
+
+								<div class="ContactFieldBlock" style="direction: ltr;">
+									sanofengineers82@gmail.com
+									<span class="ContactDetailTitle"> بريد الالكتروني</span>
+								</div>
+							
+							<br />
+							<div class="ContactFieldBlock">
+								<a class="SeeOnMap" href="https://goo.gl/maps/jdMPCqtyVqovuRaC7" target="_blank">
+									<span class="glyphicon glyphicon-map-marker"></span>
+									انظر الى الخريطة
+								</a>
+							</div>
+						</div>
+
+						
+					</div>
+
+				</div>
+			</div>
+
+			<div id="CustomerVoice" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-right text-right">
+				<div class="ContactHeader">
+
+					<div class="ContactTitle">
+						<span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+						<a href="{% url 'sanof:contact' %}">صوت العميل</a>
+
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right ContactFieldBlock JustifyText">
+						إذا لم تكن راضيًا عن منتجات شركة sanof أو النقص الفني للمنتجات في مشروعك أو عملك ، فيرجى تسجيل شكواك بالتفصيل.
+						رسالتك سيتبعها بالتأكيد الخبير أو الوحدة ذات الصلة
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="NewChemicalProductExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+
+			<div class="ProductGroupHeader" id="NewChemicalProduct-Header">
+
+			</div>
+			
+			<div class="ProductLinkDiv" id="NewChemicalProduct1-Product">
+				{% for sld in sliders %}
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right" style="padding-top:5px;padding-bottom:5px;direction:rtl;">
+						<span class='glyphicon glyphicon-pencil IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 14px;'></span>
+						<a href="{% url 'sanof:slider' sld.slug_en %}" style="font-size: 15px; margin-top: 10px;">{{ sld.title_ar }}</a>
+				</div>
+				{% endfor %}
+					
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right" style="padding-top:25px;padding-bottom:5px;direction:rtl; font-weight:bold;">
+					<span class='glyphicon glyphicon-stop IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 16px;'></span>
+					<a href="{% url 'sanof:sliders' %}" style="font-size: 16px; margin-top: 10px;">عرض الصفحة المتعلقة بمقالات شركة سانوف تشاندسي الفنية</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<div>
+		
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+
+<div class="container-fluid">
+	<input id="LanguageCulture" type="hidden" value="en" />
+	<input id="baseUrl" type="hidden" value=/ />
+
+	<div class="row">
+		<div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right SiteNavigation" style="padding-top: 5px; text-align: center;">
+			<div style="margin-top: 0;">
+				<a title="sanof Construction Chemical " href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo.png' %}" alt="sanof Construction Chemical " style="width:100%; height:60px" title="sanof Construction Chemical " />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="SiteNavigationDiv" class="row  SiteNavigationParent">
+		<div>
+			<input id="MobileMenuOpenCloseFlag" type="hidden" value="0" />
+			<div id="MobileMenu" class="hidden-lg hidden-md hidden-sm col-xs-12 xs-UserMenu  pull-right text-right"> 
+					<div class="ui-select">
+						<select id="languageSelectDrpMobile" class="col-xs-2" style="background-color: yellow; border: none; color: black; float: right; font-size: 14px; text-align: center;">
+							{% for language_code, language_name in LANGUAGES %}
+                            <option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}> {{ language_code }} </option>
+							{% endfor %}
+                        </select>
+                    </div>
+                <div class="col-xs-1 pull-left" id="MobileMenuButton">
+                    <span class="glyphicon glyphicon-menu-hamburger xs-UserMenuIcon"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs pull-left SiteNavigation" style="padding-top: 0; text-align: center;">
+            <div class="hidden-lg col-md-12 col-sm-12 col-lg-12" style="height: 10px;"></div>
+            <div style="margin-top: 5px;">
+                <a title="sanof Construction Chemical " href="{% url 'sanof:index' %}">
+                    <img src="{% static 'images/logo.png' %}" class="img-responsive" alt="sanof Construction Chemical " title="sanof Construction Chemical " style="width:100%;height: 55px;" />
+                </a>
+            </div>
+        </div>
+
+
+        <div id="HomePageLink" title="Home Page" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation SiteNavigationTextBox">
+            Home Page
+        </div>
+
+        <div id="ProductAndServices" title="Products" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation SiteNavigationTextBox">
+            Products
+        </div>
+
+        <div id="NewChemicalProduct" titleUsefullLink="Articles" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation SiteNavigationTextBox">
+            Articles
+        </div>
+
+        <div id="AboutAbadgrarn" title="About sanof" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation SiteNavigationTextBox">
+             <a href="{% url 'sanof:about' %}">About</a>	
+        </div>
+
+        <div id="ContactAbadgaran" title="Contact Us" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation SiteNavigationTextBox">
+            Contact Us
+        </div>
+
+        <div id="" title="" class="col-lg-1 col-md-1 hidden-sm hidden-xs pull-left SiteNavigation" style="cursor: auto">
+        </div>
+
+        <div id="LangugeSelect" title="" class="col-lg-1 col-md-1 col-sm-1 hidden-xs pull-left SiteNavigation CultureChangButton" style="padding-top: 15px;">
+            <div class="col-lg-12 col-md-12 col-sm-8 pull-left" style="font-size: 14px !important; padding-left: 0; padding-left: 0;">
+
+                    <div class="ui-select">
+                        <span class="glyphicon glyphicon-globe" style="font-size: 12px; padding: 2px;"></span>
+                        <select id="languageSelectDrp" style="background-color: yellow; border: none; color: black; font-size: 14px;">
+							{% for language_code, language_name in LANGUAGES %}
+                            <option value="{{ language_code }}" {% if LANGUAGE_CODE == language_code %} selected="selected" {% endif %}> {{ language_name }}</option>
+							{% endfor %}
+                        </select>
+                    </div>
+
+            </div>
+        </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs" style='background-color:yellow' >
+                    <a title="sanof Construction Chemical " href="{% url 'sanof:index' %}">
+					<img src="{% static 'images/logo1.png' %}" alt="sanof Construction Chemical " style="width:80%; height:65px" title="sanof Construction Chemical " />
+				</a>
+            </div>
+            <div id="SearchBox" class="col-lg-12 col-md-12 col-sm-12 hidden-xs pull-left SiteNavigation" style="padding-top: 10px;">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 SearchParentDiv">
+					<div id="SearchButton" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 HeaderSearchIcon text-center">
+						<div class="SearchIconButton">
+							<span class="glyphicon glyphicon-search"></span>
+						</div>
+					</div>
+					<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pull-right">
+						<input class="col-lg-12 col-md-12 col-sm-12 col-xs-12 HeaderSearchText" id="HeaderSearchText" name="HeaderSearchText" placeholder="searching" type="text" value="" />
+					</div>
+				</div>
+			</div>
+    </div>
+
+
+    <div id="ExpandMenuDivParent" class="row">
+        <input id="MenuTabOpenId" type="hidden" value="" />
+
+        <div id="ProductAndServicesExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left ExpandMenuDivHidden">
+            <div class="row">
+                {% for cat in category %}
+					<div id="ProductMenuBox{{cat.id}}" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+						<div class="ProductGroupHeader" id="ProductMenuBox1-Header">
+							<span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+							<a href="{% url 'sanof:categories' cat.slug_en %}">{{ cat.name_en }}</a>
+						</div>
+							<div id="ProductMenuBox{{cat.id}}-Product" class="ProductLinkDiv">
+								{% for pro in products %}
+									{% if pro.category == cat %}
+							 			<a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_en }}</a>
+									{% endif %}
+								{% endfor %}
+							</div>					
+					</div>
+				{% endfor %}
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  MegaMenuDivider"></div>
+            <div class="row">
+                <div id="ProductMenuBox7" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox7-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox7-Product">
+
+                    </div>
+                </div>
+
+
+                <div id="ProductMenuBox8" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox8-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox8-Product">
+
+                    </div>
+                </div>
+
+
+                <div id="ProductMenuBox9" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox9-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox9-Product">
+
+                    </div>
+                </div>
+
+
+                <div id="ProductMenuBox10" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox10-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox10-Product">
+
+                    </div>
+                </div>
+
+
+                <div id="ProductMenuBox11" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox11-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox11-Product">
+
+                    </div>
+                </div>
+
+
+                <div id="ProductMenuBox12" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-left text-left">
+                    <div class="ProductGroupHeader" id="ProductMenuBox12-Header">
+
+                    </div>
+                    <div class="ProductLinkDiv" id="ProductMenuBox12-Product">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="WorkingWithAbadgaranExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 WorkInAbadgaranBox">
+                    <span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+                    <a>Opportunities</a>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 WorkInAbadgaranBox">
+                    <span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+                    <a>Representative Opportunities</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="ContactAbadgaranExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+            <div id="OfficeContact" class="col-lg-5 col-md-5 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-left text-left">
+                <div class="ContactHeader">
+
+                    <div class="ContactTitle">
+                        <span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+                        <a href="{% url 'sanof:contact_us' %}">Headquarter</a>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
+                            <div class="ContactFieldBlock">
+                                <span class="ContactDetailTitle">Address </span>
+								Sanandaj - Adab St., not far from Jam Jam
+								intersection, Villa Alley, No. 19 Sanov Engineers Building, 2nd floor
+                            </div>
+                            <br />
+                            <div class="ContactFieldBlock">
+                                <span class="ContactDetailTitle">Phone  </span>
+                                +98-8716629565
+                            </div>
+                            <br />
+
+                                <div class="ContactFieldBlock">
+                                    <span class="ContactDetailTitle"> E-Mail Address</span>
+                                    sanofengineers82@gmail.com
+                                </div>
+
+                            <br />
+                            <div class="ContactFieldBlock">
+                                <a class="SeeOnMap" href="https://goo.gl/maps/jdMPCqtyVqovuRaC7" target="_blank">
+                                    <span class="glyphicon glyphicon-map-marker"></span>
+                                    See On Map
+
+                                </a>
+                            </div>
+                        </div>
+
+                      
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="CustomerVoice" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 OfficeAndFactoryContact pull-left text-left">
+                <div class="ContactHeader">
+
+                    <div class="ContactTitle">
+                        <span class="glyphicon glyphicon-stop IconFloatSetting Layout_Class5"></span>
+                        <a href="{% url 'sanof:contact' %}">Customer Satisfaction Feedback Form</a>
+
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left ContactFieldBlock JustifyText">
+                        Thank you for giving us the opportunity to serve you better. Please help us by taking a few minutes to tell us about the service that you have received so far.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<div id="NewChemicalProductExpandMenuDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ExpandMenuDivHidden">
+
+			<div class="ProductGroupHeader" id="NewChemicalProduct-Header">
+
+			</div>
+			
+			<div class="ProductLinkDiv" id="NewChemicalProduct1-Product">
+				{% for sld in sliders %}
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left" style="padding-top:5px;padding-bottom:5px;direction:ltr;">
+						<span class='glyphicon glyphicon-pencil IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 14px;'></span>
+						<a href="{% url 'sanof:slider' sld.slug_en %}" style="font-size: 15px; margin-top: 10px;">{{ sld.title_en }}</a>
+				</div>
+				{% endfor %}
+					
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left" style="padding-top:25px;padding-bottom:5px;direction:ltr; font-weight:bold;">
+					<span class='glyphicon glyphicon-stop IconFloatSetting' style='color: rgb(67, 82, 90); font-size: 16px;'></span>
+					<a href="{% url 'sanof:sliders' %}" style="font-size: 16px; margin-top: 10px;">View the page related to the articles of SANOF Chahandsi Technical Company   </a>
+				</div>
+			</div>
+		</div>
+
+    </div>
+<div>
+{% endif %}

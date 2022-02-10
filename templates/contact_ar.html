@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block hreflang %}ar{% endblock %} {% block lang %}ar{% endblock %}
+
+{% block title %} اتصل بنا{% endblock %}
+
+{% block meta_description %}صفحة عن شركة سانوف ايران سنندج الهندسية بعد جسر مردوخ امام مبنى المكاتب البلدية{% endblock meta_description %}
+{% block meta_keywords %}sanof,شركة سانوف للهندسة الفنية الإنتاج والتجارة والهندسة الفنية لزراعة البراغي والحديد ، زيادة المقطع العرضي ، زيادة البنية التحتية ، إنشاء المدرجات ، إزالة نقاط الضعف في التصميم والتنفيذ ، سانوف ، سانوف ، شركة سانوف الهندسية الفنية ، الخرسانة الجاهزة ، تحصينات سنندج ، صب الخرسانة والبناء والخرسانة سنندج ,{% endblock meta_keywords %}
+
+{% block body %}
+
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه الرئيسية</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:contact' %}">اتصل بالمكتب الرئيسي</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody MarginTop25">
+    <div id="ContactOfficeBox" class="col-lg-7 col-md-8 col-sm-12 col-xs-12 pull-right">
+
+        <div id="ContactOfficeTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <span class="glyphicon glyphicon-stop IconFloatSetting ContactOffice_Class1"></span>
+            معلومات الاتصال مع المقر        
+        </div>
+
+        <div id="ContactOfficeFieldBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <div id="ContactOfficeTextFieldBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+
+                <div class="ContactFieldBlock">
+                    <span class="ContactDetailTitle"> نشانی </span>
+                    سنندج - شارع ادب غير بعيد عن تقاطع جام جام
+                    فيلا أليى رقم 19 مبنى سانوف انجينيرز الدور الثانى           
+                </div>
+
+                <br/>
+                <div class="ContactFieldBlock">
+                    <span class="ContactDetailTitle">هاتف </span>
+                    8716629565-+98
+                </div>
+
+                <br/>
+                    <div class="ContactFieldBlock">
+                    sanofengineers82@gmail.com
+                        <span class="ContactDetailTitle">بريد الالكتروني</span>
+                    </div>
+                
+
+            </div>
+           
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right ContactOffice_Class2">
+                <iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.8636048278054!2d46.993421829201104!3d35.319535593029364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ff997803ad05cc5%3A0x1886dff4b3a5ec83!2z2LTYsdqp2Kog2YHZhtuMINmF2YfZhtiv2LPbjCDYs9in2YbZiNmB!5e0!3m2!1sen!2s!4v1643994014846!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-4 col-sm-12 col-xs-12  pull-right">
+
+
+    </div>
+</div>
+{% endblock %}

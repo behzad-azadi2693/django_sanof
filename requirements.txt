@@ -1,0 +1,10 @@
+asgiref==3.4.1
+Django==4.0
+django-ckeditor==6.2.0
+django-environ==0.8.1
+django-jalali-date==1.0.1
+django-js-asset==1.2.2
+jdatetime==3.7.0
+mysqlclient==2.1.0
+Pillow==8.4.0
+sqlparse==0.4.2

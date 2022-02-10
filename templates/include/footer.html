@@ -1,0 +1,731 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load list_menu %}
+
+{% if LANGUAGE_CODE == 'fa' %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 CreatDistanceDiv"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div id="SiteFooter" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+        <div id="FooterContactParent" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right text-right">
+
+            <div id="FooterContactOffic" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                <div>
+
+                    <div>
+                        <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                        <a href="{% url 'sanof:contact' %}">دفتر مرکزی</a>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle"> نشانی </span>
+                            سنندج – خیابان ادب، نرسیده به چهار راه جام جم
+                            ، کوچه ویلا ، پ19 ساختمان مهندسین سانوف، ط 2
+                        </div>
+
+                        <br />
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle">تلفن </span>
+                            <span>۱۶۶۲۹۵۶۵-۰۸۷</span>
+                        </div>
+
+                        <br />
+                        <div class="ContactFieldBlock">
+                            sanofengineers82@gmail.com
+                            <span class="ContactDetailTitle"> آدرس ایمیل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div id="FooterProductGroup" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right text-right">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                <div>
+                    <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                    گروه محصولات
+                </div>
+            </div>
+
+            <div id="FooterProductGroupBody1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FooterProductGroupBody pull-right text-right">
+               
+                <a href="{% url 'sanof:products' %}" style="color: rgb(0, 140, 222)">سایر محصولات ...</a>
+
+            </div>
+        </div>
+
+       
+
+        <div class="hidden-lg hidden-md hidden-sm" style="height: 25px; width: 100%;"></div>
+
+        <div id="SocialNetworkLogo" class="col-lg-4 col-md-4 col-sm-12 hidden-xs   pull-right text-right">
+
+            <div id="" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 ContactPhoneBold">
+                <span class=""></span>
+                ۰۲۱-۸۷۷۵۴
+            </div>
+
+            <div style="margin-top: 15px;">
+                <div id="instagramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/instagram.png' %}" alt="sanof Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="telegramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="LinkedInLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div id="Aparat" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="Youtube" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+
+                <div id="Google-plus" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="" class="hidden-lg hidden-md hidden-sm col-xs-12 text-center">
+            <div id="" class="col-xs-12 ContactPhoneBold" style="text-align: center;">
+                <span class="glyphicon glyphicon-phone-alt FontSize22"></span>
+                ۰۲۱-۸۷۷۵۴
+            </div>
+
+            <div class="MarginTop15">
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/instagram.png' %}" alt="Abadgaran Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10" style="margin-top: 50px;"></div>
+        <div id="FooterCopyRight" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+
+            <div id="FooterSiteNav" class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right" style="direction: ltr">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:products' %}">مـحصولات</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="">خدمـات آنلاین</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:about' %}">درباره مـا</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:contact' %}">تمـاس با مـا</a>
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-lg-push-2 col-md-push-2 col-lg-8 col-md-10 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10"></div>
+
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="MarginTop15">
+                    .تمام حقوق این وب سایت متعلق به شرکت فنی مهندسی SANOF میباشد<br />
+                </div>
+                <div class="MarginTop15">
+                  <a href="https://www.pyngoweb.ir">pyngoweb.ir</a> طراحی و ساخت شرکت فنی مهندسی پینگووب<br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endif %}
+
+{% if LANGUAGE_CODE == 'ar' %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 CreatDistanceDiv"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div id="SiteFooter" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+        <div id="FooterContactParent" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right text-right">
+
+            <div id="FooterContactOffic" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                <div>
+
+                    <div>
+                        <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                        <a href="{% url 'sanof:contact' %}">المكتب المركزي</a>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle"> تبوك </span>
+                            
+                        </div>
+
+                        <br />
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle"> هاتف</span>
+                            <span>8716629565-098</span>
+                        </div>
+                        سنندج - شارع ادب غير بعيد عن تقاطع جام جام
+                        ، فيلا الزقاق ، رقم 19 مبنى سانوف المهندسين ، الطابق الثاني
+                        <br />
+                        <div class="ContactFieldBlock">
+                            sanofengineers82@gmail.com
+                            <span class="ContactDetailTitle"> بريد الالكتروني</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div id="FooterProductGroup" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right text-right">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+                <div>
+                    <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                    گروه محصولات
+                </div>
+            </div>
+
+            <div id="FooterProductGroupBody1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FooterProductGroupBody pull-right text-right">
+                
+                <a href="{% url 'sanof:products' %}" style="color: rgb(0, 140, 222)"> منتجات اخرى...</a>
+
+            </div>
+        </div>
+
+       
+
+        <div class="hidden-lg hidden-md hidden-sm" style="height: 25px; width: 100%;"></div>
+
+        <div id="SocialNetworkLogo" class="col-lg-4 col-md-4 col-sm-12 hidden-xs   pull-right text-right">
+
+            <div id="" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 ContactPhoneBold">
+                <span class=""></span>
+                +98-8716629565
+            </div>
+
+            <div style="margin-top: 15px;">
+                <div id="instagramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/instagram.png' %}" alt="Abadgaran Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="telegramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="LinkedInLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div id="Aparat" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="Youtube" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+
+                <div id="Google-plus" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="" class="hidden-lg hidden-md hidden-sm col-xs-12 text-center">
+            <div id="" class="col-xs-12 ContactPhoneBold" style="text-align: center;">
+                <span class="glyphicon glyphicon-phone-alt FontSize22"></span>
+                +98-8716629565
+            </div>
+
+            <div class="MarginTop15">
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/instagram.png' %}" alt="Abadgaran Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10" style="margin-top: 50px;"></div>
+        <div id="FooterCopyRight" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+
+            <div id="FooterSiteNav" class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right" style="direction: ltr">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:products' %}">منتجات</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs">خدمات عبر الانترنت</div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href=""></a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:about' %}">معلومات عنا</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:contact' %}">اتصل بنا</a>
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-lg-push-2 col-md-push-2 col-lg-8 col-md-10 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10"></div>
+
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="MarginTop15">
+                    جميع حقوق هذا الموقع مملوكة لشركة SANOF الهندسية                
+                </div>
+                <div class="MarginTop15">
+                  <a href="https://www.pyngoweb.ir">pyngoweb.ir</a> تصميم وإنشاء شركة Pingoob الهندسية الفنية<br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 CreatDistanceDiv"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider"></div>
+    <div id="SiteFooter" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+        <div id="FooterContactParent" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left text-left">
+
+            <div id="FooterContactOffic" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left">
+                <div>
+
+                    <div>
+                        <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                        <a href="{% url 'sanof:contact' %}">central office</a>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle"> Address </span>
+                            Sanandaj - Adab Street, not far from Jam Jam intersection
+                            , Villa Alley, No. 19 Sanov Engineers Building, 2nd floor
+                        </div>
+
+                        <br />
+                        <div class="ContactFieldBlock">
+                            <span class="ContactDetailTitle"> Phone</span>
+                            <span>+98-8716629565</span>
+                        </div>
+
+                        <br />
+                        <div class="ContactFieldBlock">
+                            sanofengineers82@gmail.com
+                            <span class="ContactDetailTitle">E-mail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div id="FooterProductGroup" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left text-left">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left text-left">
+                <div>
+                    <span class="glyphicon glyphicon-info-sign IconFloatSetting FontSize18"></span>
+                    Product group
+                </div>
+            </div>
+
+            <div id="FooterProductGroupBody1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FooterProductGroupBody pull-left text-left">
+
+            </div>
+        </div>
+
+       
+
+        <div class="hidden-lg hidden-md hidden-sm" style="height: 25px; width: 100%;"></div>
+
+        <div id="SocialNetworkLogo" class="col-lg-4 col-md-4 col-sm-12 hidden-xs   pull-left text-left">
+
+            <div id="" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 ContactPhoneBold">
+                <span class=""></span>
+                +98-8716629565
+            </div>
+
+            <div style="margin-top: 15px;">
+                <div id="instagramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/instagram.png' %}" alt="Abadgaran Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="telegramLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="LinkedInLink" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="float: left">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div id="Aparat" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="Youtube" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+
+                <div id="Google-plus" class="col-lg-10 col-md-10 col-sm-10 col-xs-10  SocialNetworkLogo">
+                    <div style="text-align: left;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="" class="hidden-lg hidden-md hidden-sm col-xs-12 text-center">
+            <div id="" class="col-xs-12 ContactPhoneBold" style="text-align: center;">
+                <span class="glyphicon glyphicon-phone-alt FontSize22"></span>
+                +98-8716629565
+            </div>
+
+            <div class="MarginTop15">
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/instagram.png' %}" alt="Abadgaran Group instagram" title="Abadgaran Group instagram" />
+                        <a href="https://www.instagram.com/sanof_engineers/" title="Instagram" class="FontSize14">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/telegram.png' %}" alt="Abadgaran Group telegram" title="Abadgaran Group telegram" />
+                        <a href="" title="Telegram" class="FontSize14">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/LinkedIn.png' %}" alt="Abadgaran Group LinkedIn" title="Abadgaran Group LinkedIn" />
+                        <a href="" title="LinkedIn" class="FontSize14">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/aparat_1.png' %}" alt="Abadgaran Group Aparat" title="Abadgaran Group Aparat" />
+                        <a href="" title="Aparat" class="FontSize14">
+                            Aparat
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Youtube_1.png' %}" alt="Abadgaran Group Youtube" title="Abadgaran Group Youtube" />
+                        <a href="" title="Youtube" class="FontSize14">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+                <div id="" class="col-xs-12 SocialNetworkLogo text-center">
+                    <div style="text-align: center;">
+                        <img src="{% static 'icons/Google-Plus.png' %}" alt="Abadgaran Group Google plus" title="Abadgaran Group Google plus" />
+                        <a href="" title="Google plus" class="FontSize14">
+                            google+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10" style="margin-top: 50px;"></div>
+        <div id="FooterCopyLeft" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+
+            <div id="FooterSiteNav" class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                <div class="col-lg-push-2 col-md-push-2 col-sm-push-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left" style="direction: ltr">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:products' %}"></a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs">Products</div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="">Online services</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:about' %}">About us</a>
+                            </div>
+                            <div class="FooterNavDivider hidden-xs"></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <a href="{% url 'sanof:contact' %}">Contact us</a>
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="col-lg-push-2 col-md-push-2 col-lg-8 col-md-10 col-sm-12 col-xs-12 Horizontal-xsUserMenu-Divider MarginBottom10"></div>
+
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="MarginTop15">
+                    All rights of this website belong to SANOF Engineering Company
+                </div>
+                <div class="MarginTop15">
+                  Design and construction of Pingoob Engineering Technical Company <a href="https://www.pyngoweb.ir">pyngoweb.ir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endif %}

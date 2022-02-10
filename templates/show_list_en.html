@@ -1,0 +1,409 @@
+{% extends 'base.html' %}
+{% load jalali_tags %}
+{% load change_character %}
+{% load static %}
+
+{% block hreflang %}en{% endblock %} {% block lang %}en{% endblock %}
+
+{% block title %}
+        {% if slider %} articles
+        {% elif newse %} news
+        {% elif certificate %} certificates
+        {% elif category%} category
+        {% elif service %} services
+        {% elif product %} products
+        {% elif portfolio %} portfolio
+        {% elif all_message %} Messages
+        {% elif all_category %} all category
+        {% endif %}
+
+{% endblock %}
+
+{% block meta_description %}Home page of Sanof Technical Engineering Company, manufacturing, trading, technical engineering of bolt and armature planting, increasing the cross section, increasing the infrastructure, creating a terrace, eliminating design and executive weaknesses {% endblock meta_description %}
+{% block meta_keywords %}Home page of Sanof Technical Engineering Company Production, trade, technical engineering of bolt and armature planting, cross section increase, increase of infrastructure, construction of terrace, elimination of design and executive weaknesses, sanof, Sanof, Sanof Engineering Technical Company, ready concrete, Sanandaj fortifications, Concreting, building and concreting, Sanandaj concrete{% endblock meta_keywords %}
+
+
+{% block mystyle %} 
+<script src="{% static 'js/lightbox.js' %}"></script>
+<link href="{% static 'css/lightbox.css' %}" rel="stylesheet"/>
+
+<script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'disableScrolling': true
+    })
+</script>
+{% endblock %}
+
+{% block body %}
+{% if slider %}
+<div class="row GetUsefulLinkAndArticle_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetUsefulLinkAndArticle_Class1">
+        <img src="{% static 'images/slider.png' %}" class="img-responsive" alt="مقالات فنی و مهندسی" title="مقالات فنی و مهندسی" />
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Hmoe</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:sliders' %}">Technical and engineering articles</a>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 MainContentBody GetUsefulLinkAndArticle_Class1">
+
+        <div class="GetUsefulLinkAndArticle_Class3">
+
+            <h1 class="GetUsefulLinkAndArticle_Class4">
+                Technical and engineering articles
+                <span class="glyphicon glyphicon-bookmark IconFloatSetting GetUsefulLinkAndArticle_Class5"></span>
+            </h1>
+            {% for slider in sliders %}
+            <div class="row GetUsefulLinkAndArticle_Class6">
+                <div class="col-lg-4 col-md-4 hidden-sm hidden-sm">
+                    <img src="{{ slider.image.url }}" style="width:80%; height:500px" class="img-responsive img-rounded center-block" alt="{{ slider.title_en }}" title="{{ slider.title_en }} " />
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="GetUsefulLinkAndArticle_Class7">
+                          <h3 style="font-size: 22px;direction:rtl;">
+                            <span class="glyphicon glyphicon-stop IconFloatSetting GetUsefulLinkAndArticle_Class8"></span>
+                            <a target="" href="{% url 'sanof:slider' slider.slug_en %}">
+                                {{ slider.title_en }}
+                            </a>
+                        </h3>
+                    </div>
+                    <div style="margin-left: 56px;">
+                        <div>
+                            SANOF Engineering Technical Company
+                            <span class="GetUsefulLinkAndArticle_Class9">
+                                authored
+                            </span>
+                        </div>
+                        
+                        <br />
+                        <div>
+                            {{ slider.date}}
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% elif newses %}
+          
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Hmoe</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:newses' %}">News and Roydad Ha</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div class="DisplayEventAndNewsBoxParent col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        {% for news in newses %}
+            <div id=EventAndNews4422 class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 DisplayNewsAndEventBoxTitle">
+
+                <div class="EventAndNewsListDateParent col-lg-1 col-md-1 col-sm-1 col-xs-6 pull-left">
+                    <div class="EventAndNewsListDateSection">
+                        {{ news.date|to_jalali:'/%d' }}
+                    </div>
+                    <div class="EventAndNewsListDateDivider"></div>
+                    <div class="EventAndNewsListDateSection">
+                        {{ news.date|to_jalali:'/%m' }}
+                    </div>
+                    <div class="EventAndNewsListDateDivider"></div>
+                    <div class="EventAndNewsListDateSection">
+                        {{ news.date|to_jalali:'/%Y' }}
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
+                    
+
+                    <div class="EventAndNewsTitleMark">
+                        <h2 class="FontSize18 MarginTop5 MarginBottom5" style="line-height: 1.7;">
+                            {{ news.title_en }}
+                        </h2>
+                    </div>
+
+                    <div id=EventAndNewsShortExplain4422 class="EventAndNewsShortExplain col-lg-11 col-md-11 col-sm-11 col-xs-12 pull-left">
+                            
+                            <a href="{% url 'sanof:news' news.slug_en %}">Dar in Bar Bechter Badanid...</a>
+                    </div>
+                </div>
+
+
+                    <div id=EventAndNewsImageBox4422 class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                        <img src="{{ news.image.url }}" style="width:80%; height:300px" alt="" title="" class="img-responsive img-rounded EventAndNewsListImage"/>
+                    </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% elif certificates %}
+<div class="row GetAllCertificate_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetAllCertificate_Class1">
+        <img src="{% static 'images/Certificatebig.png' %}" class="img-responsive" style="clear: both" alt="Abadgaran Group Certificates" title="Abadgaran Group Certificates"/>
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:certificates' %}">Standard</a>
+    </div>
+
+
+</div>
+
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+
+    <div class="CertificateBoxParent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {% for certificate in certificates %}        
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  pull-left CertificateParentDiv">
+                <a href="{{ certificate.image.url }}" data-lightbox="CertificateList" data-title="{{ certificate.title_en }} ">
+                    <img src="{{ certificate.image.url }}" alt="{{ certificate.title_en }} " title="{{ certificate.title_en }}" class="CertificateThumbnail  img-responsive"/><br/>
+                    <p class="CertificateExplainBox">
+                        {{ certificate.date }} {{ certificate.title_en }}
+                    </p>
+                </a>
+            </div>
+        {% endfor %}    
+    </div>
+</div>
+{% elif category %}
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:all_categories' %}">all category groups</a>
+    </div>
+
+        <div class="SiteMapElement_3">
+            <a href="{% url 'sanof:categories' categories.slug_en %}"> {{ categories.name_en }} </a>
+        </div>
+
+</div>
+<div class="row DisplaySingleProductGroup_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 DisplayProductGroupBoxParent MainContentBody">
+
+        <div id=ProductGroup34 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left DisplayProductGroupBox" style="height: auto; min-height: 300px;">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left">
+                    <div class="ProductOrGroupTitleMark DisplaySingleProductGroup_Class2 ">
+
+                            <h1 class=" col-lg-push-1 col-md-push-1 col-lg-11 col-md-11 col-sm-12 col-xs-12 FontSize26 MarginTop5 MarginBottom5 ProductGroupTitleAlighnment">
+                                <span class="glyphicon glyphicon-stop IconFloatSetting DisplayProductGroup_Class3"></span>
+                                {{ categories.name_en }}
+                            </h1>
+                            <div class="col-lg-push-1 col-md-push-1 col-lg-11 col-md-11 col-sm-12 col-xs-12 ProductGroupTextAlighnment" >
+                                {{ categories.description_en|safe }}
+                            </div>
+
+                    </div>
+                </div>
+
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-left ProductLinkButtonParent">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 DisplaySingleProductGroup_Class4">
+                        <a href="{% url 'sanof:product' product.slug_en %}" class="ProductLinkButtonATag">
+                            <div class="ProductLinkButton">
+                                <div class="FontSize16">
+                                    {{ product.name_en }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>                                 
+        </div>
+    </div>
+</div>
+        </div>
+{% elif all_category %}
+
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:all_categories' %}">category groups</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+    <div class="DisplayProductGroupBoxParent" >
+        {% for cat in categories %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div id=ProductGroup32 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left DisplayProductGroupBoxMainShow" style="">
+
+                    <img src="{{ cat.image.url }}" class="img-responsive DisplayProductGroup_Class1"/>
+
+                    <div class="DisplayProductGroup_Class2"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pull-left">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left">
+                            <div class="ProductOrGroupTitleMark">
+                                <h2 class="FontSize24 MarginTop10 MarginBottom5">
+                                    <span class="glyphicon glyphicon-stop IconFloatSetting DisplayProductGroup_Class3"></span>
+                                    <a href="{% url 'sanof:categories' cat.slug_en %}" class="">{{ cat.name_en }}</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id=ProductGroupProductBox32 class="ProductOrGroupLinkBoxParent DisplayProductGroupProductBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-left">
+                        <div class="ProductOrGroupLinkBox">
+                            {% for pro in cat.product_set %}
+                                <div>
+                                    <h3 class="FontSize18 MarginTop5 MarginBottom10">
+                                        <span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+                                        <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_en}}</a>
+                                    </h3>
+                                </div>
+                            {% endfor %}        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif portfolios %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:portfolios' %}">portfolios</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+        Project groups
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left DisplayProjectGroupBox">
+        {% for pro in portfolios %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+
+                    <img src="{{ pro.image.url }}" style="width:80%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
+                    <div class="GrayBoxLink" style="padding-top: 10px;">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:portfolio' pro.slug_en %}">{{ pro.title_en }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif services %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:services' %}">services</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+        services groups
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left DisplayProjectGroupBox">
+        {% for service in services %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+
+                    <img src="{{ service.image.url }}" style="width:100%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
+                    <div class="GrayBoxLink" style="padding-top: 10px;">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:service' service.slug_en %}">{{ service.title_en }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% elif product %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:products' %}">products</a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+        products groups
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left DisplayProjectGroupBox">
+        {% for pro in products %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+
+                    <img src="{{ pro.image.url }}" style="width:100%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
+                    <div class="GrayBoxLink" style="padding-top: 10px;">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_en }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

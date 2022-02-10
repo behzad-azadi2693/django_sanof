@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} خانه{% endblock %}
+
+{% block meta_description %}صفحه خانه وبسابت شرکت فنی مهندسی سانوف تولیدی، بازرگانی، فنی مهندسی کاشت بولت و آرماتور، افزایش مقطع، افزایش زیر بنا، ایجاد تراس، رفع ضعف های طراحی و اجرایی{% endblock meta_description %}
+{% block meta_keywords %}sanof,شرکت فنی مهندسی سانوف تولید، بازرگانی، فنی مهندسی کاشت بولت و آرمیچر، افزایش سطح مقطع، افزایش زیرساخت، احداث تراس، رفع نقاط ضعف طراحی و اجرایی، سانوف، شرکت فنی مهندسی سانوف، بتن آماده، استحکامات سنندج، بتن ریزی ساختمان و بتن ریزی بتن سنندج {% endblock meta_keywords %}
+
+{% block body %}
+<style>
+    #uploadImageLink:hover { text-decoration: none; }
+</style>
+
+<div class="row Index_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class2">
+
+        <div id="carousel-example-generic" class="carousel " data-ride="carousel">
+          
+            <div class="carousel-inner">
+               
+
+                    <video autoplay="autoplay" preload="auto" loop muted class="img-responsive">
+                        <source src="{% static 'video/Final-FirstPage.mp4' %}" type="video/mp4" />
+                    </video>
+              
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div><!-- /carousel -->
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class5">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePage">
+        <div>
+
+            <h1 style="font-size: 22px">
+                    <span class="glyphicon glyphicon-ok-sign IconFloatSetting"></span>
+                    SANOF درباره شرکت فنی مهندسی 
+            </h1>
+
+        </div>
+        <p>
+            مجموعه فوق فعالیت خود را در سال 80 تحت عنوان کلینیک ساختمانی فراگیر- مرکز مهندسی مصالح (عرضه کننده تجهیزات ومصالح ساختمانی روز دنیا ، ارائه دانش فنی وخدمات اجرایی) شروع به فعالیت نمود ودرسال 89 با تاسیس شرکت مهندسین سانوف – سهامی خاص ،با اتکا به دانش وامکانات موجود قدم در راه عمران وآبادانی کشورعزیزمان ایران برداشت تا سهمی هرچند کوچک در این زمینه داشته باشد .
+            <a href="/fa-IR/Company/">در این باره بیشتر بدانید...</a>
+        </p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePageInAnotherPage">
+        <div>
+
+            <h4>
+                <span class="glyphicon glyphicon-ok-sign IconFloatSettingReverse" style="font-size: 22px;"></span>
+                 About Engineering Technical Company SANOF
+            </h4>
+        </div>
+        <p>
+            The above group started its activity in 2002 under the name of Inclusive Construction Clinic - Materials Engineering Center (supplier of modern construction equipment and materials, providing technical knowledge 
+            <a href="/en-US/Company/">see more ...</a>
+        </p>
+    </div>
+
+    <div class="FirstPageContentBlock">
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/products.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات و محصولات " title="خدمات و محصولات "/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-qrcode IconFloatSetting"></span>
+                        <a href="{% url 'sanof:products' %}" >  محصولات </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/news.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اخبـار و رویـداد ها" title="اخبـار و رویـداد ها"/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-globe IconFloatSetting"></span>
+                        <a href="{% url 'sanof:newses' %}"> اخبـار و رویـداد ها</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/certificate.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اسـتاندارد ها و گـواهی نامه ها" title="اسـتاندارد ها و گـواهی نامه ها"/>
+                <div class="GrayBoxLink">
+                    <h2 class="FontSize16">
+                        <span class="glyphicon glyphicon-certificate IconFloatSetting"></span>
+                        <a href="{% url 'sanof:certificates' %}"> اسـتاندارد ها و گـواهی نامه ها</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="FirstPageContentBlock">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/slider_4.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="مقالات فنی و مهندسی" title="مقالات فنی و مهندسی"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:sliders' %}">مقالات فنی و مهندسی</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/portfolio.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="پروژه های انجام گرفته و در دست انجام" title="پروژه های انجام گرفته و در دست انجام"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-cog IconFloatSetting"></span>
+                        <a href="{% url 'sanof:portfolios' %}">پروژه های انجام گرفته و در دست انجام</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+                <img src="{% static 'images/services.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات" title="خدمات"/>
+                <div class="GrayBoxLink">
+                    <h3 class="FontSize16">
+                        <span class="glyphicon glyphicon-blackboard IconFloatSetting"></span>
+                        <a href="{% url 'sanof:services' %}">خدمات</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% for qst in questions %}
+
+<div id=RepetitveQuestion2 class="col-lg-10 col-md-10  col-lg-pull-1 col-md-pull-1 col-sm-12 col-xs-12 pull-right RepetitveQuestionBox">
+    <div id=RepetitveQuestionBox2 class="DisplayRepetitveQuestionBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
+        <div class="RepetitveQuestion">
+            {{ qst.question_en }}
+            <span class="glyphicon glyphicon-question-sign IconFloatSetting FontSize18"></span>
+        </div>
+        <br/>
+        <div class="RepetitveAnswer pull-right ">
+            <img src="{% static 'icons/questions.png' %}" class="QuestionPNGIcon" alt="icons"/>
+            {{ qst.answer_fa|safe }}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
