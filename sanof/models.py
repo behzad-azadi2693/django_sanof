@@ -475,8 +475,11 @@ class Portfolio(models.Model):
         return date2jalali(self.date)
 
 def path_save_portfolios(instance, filename):
-    path_save = os.path.join('portfolio', instance.portfolio.title_en, filename)
+    base, extension = os.path.splitext(filename)
+    path_save = os.path.join('portfolio', instance.portfolio.title_en, str(instance.id) + str(ext) )
+    
     return path_save
+
 
 class PortfolioImages(models.Model):
     portfolio = models.ForeignKey(Portfolio,on_delete=models.CASCADE, verbose_name=_('which portfolio'))
