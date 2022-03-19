@@ -11,6 +11,20 @@ from django.utils import translation
 from django.db.models import Q
 
 # Create your views here.
+from django.db import connection, reset_queries
+import time
+
+def debugger(func):
+    def wrapper(*args, **kwargs):
+        reset_queries()
+        start_time = time.time()
+        value = func(*args, **kwargs)
+        end_time = time.time()
+        queries = len(connection.queries)
+        print(f"------------------connection number: {queries}----time: {start_time-end_time}")
+        return value
+    return wrapper
+
 
 def change_language(request):
     lang = request.GET['lang']
