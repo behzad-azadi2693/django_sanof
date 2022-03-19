@@ -74,7 +74,7 @@
                     <div class="GetUsefulLinkAndArticle_Class7">
                           <h3 style="font-size: 22px;direction:rtl;">
                             <span class="glyphicon glyphicon-stop IconFloatSetting GetUsefulLinkAndArticle_Class8"></span>
-                            <a target="" href="{% url 'sanof:slider' slider.slug_en %}">
+                            <a target="" href="{% url 'sanof:slider' slider.slug_fa %}">
                                 {{ slider.title_fa }}
                             </a>
                         </h3>
@@ -145,8 +145,8 @@
 
                     <div id=EventAndNewsShortExplain4422 class="EventAndNewsShortExplain col-lg-11 col-md-11 col-sm-11 col-xs-12 pull-right">
                             
-                            <a href="{% url 'sanof:news' news.slug_en %}">در این باره بیشتر بدانید...</a>
-                    </div>
+                            <a href="{% url 'sanof:news' news.slug_fa %}">در این باره بیشتر بدانید...</a>
+                    </div>1
                 </div>
 
 
@@ -206,7 +206,7 @@
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:categories' categories.slug_en %}"> {{ category.name_fa }} </a>
+            <a href="{% url 'sanof:categories' categories.slug_fa %}"> {{ category.name_fa }} </a>
         </div>
 
 </div>
@@ -233,7 +233,7 @@
                 {% for product in products %}
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-left ProductLinkButtonParent">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 DisplaySingleProductGroup_Class4">
-                        <a href="{% url 'sanof:product' product.slug_en %}" class="ProductLinkButtonATag">
+                        <a href="{% url 'sanof:product' product.slug_fa %}" class="ProductLinkButtonATag">
                             <div class="ProductLinkButton">
                                 <div class="FontSize16">
                                     {{ product.name_fa }}
@@ -276,7 +276,7 @@
                             <div class="ProductOrGroupTitleMark">
                                 <h2 class="FontSize24 MarginTop10 MarginBottom5">
                                     <span class="glyphicon glyphicon-stop IconFloatSetting DisplayProductGroup_Class3"></span>
-                                    <a href="{% url 'sanof:categories' cat.slug_en %}" class="">{{ cat.name_fa }}</a>
+                                    <a href="{% url 'sanof:categories' cat.slug_fa %}" class="">{{ cat.name_fa }}</a>
                                 </h2>
                             </div>
                         </div>
@@ -288,7 +288,7 @@
                                 <div>
                                     <h3 class="FontSize18 MarginTop5 MarginBottom10">
                                         <span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
-                                        <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_fa }}</a>
+                                        <a href="{% url 'sanof:product' pro.slug_fa %}">{{ pro.name_fa }}</a>
                                     </h3>
                                 </div>
                             {% endfor %}        
@@ -327,7 +327,7 @@
                     <img src="{{ pro.image.url }}" style="width:80%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
                     <div class="GrayBoxLink" style="padding-top: 10px;">
                         <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
-                        <a href="{% url 'sanof:portfolio' pro.slug_en %}">{{ pro.title_fa }}</a>
+                        <a href="{% url 'sanof:portfolio' pro.slug_fa %}">{{ pro.title_fa }}</a>
                     </div>
                 </div>
             </div>
@@ -362,7 +362,7 @@
                     <img src="{{ service.image.url }}" style="width:100%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
                     <div class="GrayBoxLink" style="padding-top: 10px;">
                         <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
-                        <a href="{% url 'sanof:service' service.slug_en %}">{{ service.title_fa }}</a>
+                        <a href="{% url 'sanof:service' service.slug_fa %}">{{ service.title_fa }}</a>
                     </div>
                 </div>
             </div>
@@ -397,7 +397,7 @@
                     <img src="{{ pro.image.url }}" style="width:100%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
                     <div class="GrayBoxLink" style="padding-top: 10px;">
                         <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
-                        <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_fa }}</a>
+                        <a href="{% url 'sanof:product' pro.slug_fa %}">{{ pro.name_fa }}</a>
                     </div>
                 </div>
             </div>
