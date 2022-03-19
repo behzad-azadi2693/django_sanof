@@ -14,17 +14,11 @@ def path_save_category(instance, filename):
     return path_save
 
 class Category(models.Model):
-    name_en = models.CharField(max_length=250, verbose_name=_('category name english'), unique=True)
-    name_fa = models.CharField(max_length=250, verbose_name=_('category name persian'), unique=True)
-    name_ar = models.CharField(max_length=250, verbose_name=_('category name arabian'), unique=True)
-    description_en = RichTextUploadingField(verbose_name=_('description english'))
-    description_fa = RichTextUploadingField(verbose_name=_('description persian')) 
-    description_ar = RichTextUploadingField(verbose_name=_('description arabian'))  
+    name = models.CharField(max_length=250, verbose_name=_('category name'), unique=True)
+    description = RichTextUploadingField(verbose_name=_('description english'))
     image = models.ImageField(upload_to='category/', verbose_name=_('image'))
-
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
+    slug = models.CharField(default = uuid4(), max_length=500)
+   
 
     class Meta:
         verbose_name = _('category')
@@ -68,49 +62,35 @@ def path_save_product(instance, filename):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING,related_name='all_product', verbose_name=_('which category'))
-    name_en = models.CharField(max_length=200, verbose_name=_('product name english'))
-    name_fa = models.CharField(max_length=200, verbose_name=_('product name persian'))
-    name_ar = models.CharField(max_length=200, verbose_name=_('product name arabian'))
+    name = models.CharField(max_length=200, verbose_name=_('product name'))
     image = models.ImageField(upload_to=path_save_product, verbose_name=_('image'))
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('product title '), unique=True)
     standard = models.CharField(max_length=300, null=True, blank=True, verbose_name=_('Complies with standard'))
-    type_category_en = models.CharField(max_length=200, null=True, blank=True, verbose_name=_('Package type english'))
-    type_category_fa = models.CharField(max_length=200, null=True, blank=True, verbose_name=_('Package type persian'))
-    type_category_ar = models.CharField(max_length=200, null=True, blank=True, verbose_name=_('Package type arabian'))
-    maintenance_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('maintenance english'))
-    maintenance_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('maintenance persian'))
-    maintenance_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('maintenance arabian'))
-    consumption_level_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption level english'))
-    consumption_level_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption level persian'))
-    consumption_level_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption level arabian')) 
-    description_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('description english')) 
-    description_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('description persian')) 
-    description_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('description arabian'))  
-    safety_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('safety english'))
-    safety_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('safety persian'))
-    safety_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('safety arabian'))
-    consumption_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption english')) 
-    consumption_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption persian')) 
-    consumption_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption arabian'))  
-    properties_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('properties english'))   
-    properties_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('properties persian')) 
-    properties_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('properties arabian'))  
-    application_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('application english'))      
-    application_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('application persian')) 
-    application_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('application arabian')) 
-    specifications_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('specifications english')) 
-    specifications_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('specifications persian')) 
-    specifications_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('specifications arabian')) 
-    catalog_en = models.FileField(upload_to=path_save_product,null=True,blank=True, verbose_name=_('catalog english'))
-    catalog_fa = models.FileField(upload_to=path_save_product,null=True,blank=True, verbose_name=_('catalog persian'))
-    catalog_ar = models.FileField(upload_to=path_save_product,null=True,blank=True, verbose_name=_('catalog arabian'))
+    type_category = models.CharField(max_length=200, null=True, blank=True, verbose_name=_('Package type'))
+   
+
+    maintenance = RichTextUploadingField(null=True, blank=True, verbose_name=_('maintenance'))
+    
+    consumption_level = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption level'))
+   
+    description = RichTextUploadingField(null=True, blank=True, verbose_name=_('description ')) 
+    
+    safety = RichTextUploadingField(null=True, blank=True, verbose_name=_('safety'))
+   
+    consumption = RichTextUploadingField(null=True, blank=True, verbose_name=_('consumption')) 
+   
+    properties = RichTextUploadingField(null=True, blank=True, verbose_name=_('properties'))   
+
+    application = RichTextUploadingField(null=True, blank=True, verbose_name=_('application'))      
+  
+    specifications = RichTextUploadingField(null=True, blank=True, verbose_name=_('specifications')) 
+   
+    catalog = models.FileField(upload_to=path_save_product,null=True,blank=True, verbose_name=_('catalog'))
+ 
     show_navbar = models.BooleanField(default=True, verbose_name=_('to be displayed in navbar??'))
     searching = models.TextField(verbose_name=_('keyword serching'))
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
+    slug = models.CharField(default = uuid4(), max_length=500)
+   
 
     class Meta:
         verbose_name = _('Product')
@@ -169,20 +149,12 @@ def path_save_news(instance, filename):
     return path_save
 
 class News(models.Model):
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     image = models.ImageField(upload_to=path_save_news, verbose_name=_('image'))
-    description_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('description english')) 
-    description_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('description persian')) 
-    description_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('description arabian'))  
-
+    description = RichTextUploadingField(null=True, blank=True, verbose_name=_('description')) 
     date = models.DateField(auto_now_add=True)
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
-
-
+    slug = models.CharField(default = uuid4(), max_length=500)
+ 
     class Meta:
         verbose_name = _('News')
         verbose_name_plural = _('News')
@@ -228,17 +200,12 @@ def path_save_certificate(instance, filename):
     return path_save
 
 class Certificates(models.Model):
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     image = models.ImageField(upload_to=path_save_certificate, verbose_name=_('image'))
     date = models.DateField(verbose_name=_('date'))
-    show_en = models.BooleanField(default=False, verbose_name=_('show in english???'))
-    show_fa = models.BooleanField(default=False, verbose_name=_('show in persian???'))
-    show_ar = models.BooleanField(default=False, verbose_name=_('show in arabian???'))
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
+    show = models.BooleanField(default=False, verbose_name=_('show in???'))
+    slug = models.CharField(default = uuid4(), max_length=500)
+   
 
     class Meta:
         verbose_name = _('Certificate')
@@ -279,14 +246,8 @@ class Certificates(models.Model):
         super(Certificates, self).save(*args, **kwargs)
 
 class Questions(models.Model):
-    question_en = models.CharField(max_length=300, verbose_name=_('Question english'), unique=True)
-    answer_en = RichTextUploadingField(verbose_name=_('Answer english'))
-
-    question_fa = models.CharField(max_length=300, verbose_name=_('Question persian'), unique=True)
-    answer_fa = RichTextUploadingField(verbose_name=_('Answer persian'))
-
-    question_ar = models.CharField(max_length=300, verbose_name=_('Question arabian'), unique=True)
-    answer_ar = RichTextUploadingField(verbose_name=_('Answer arabian'))
+    question = models.CharField(max_length=300, verbose_name=_('Question '), unique=True)
+    answer = RichTextUploadingField(verbose_name=_('Answer ')
 
     class Meta:
         verbose_name = _('Frequently Asked Questions')
@@ -307,17 +268,10 @@ def path_save_services(instance, filename):
     return path_save
 
 class Services(models.Model):
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     image = models.ImageField(upload_to=path_save_services, verbose_name=_('image'))
-    description_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('description english')) 
-    description_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('description persian')) 
-    description_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('description arabian'))  
-
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
+    description_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('description ')) 
+    slug = models.CharField(default = uuid4(), max_length=500)
 
     class Meta:
         verbose_name = _('Service')
@@ -361,17 +315,11 @@ def path_save_slider(instance, filename):
     return path_save
 
 class Slider(models.Model):
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     image = models.ImageField(upload_to=path_save_slider, verbose_name=_('image'))
-    description_en = RichTextUploadingField(verbose_name=_('slider english'))
-    description_fa = RichTextUploadingField(verbose_name=_('slider persian'))
-    description_ar = RichTextUploadingField(verbose_name=_('slider arabian'))
+    description = RichTextUploadingField(verbose_name=_('slider '))
     show = models.BooleanField(default=False, verbose_name=_('to be displayed??'))
-    slug_en = models.CharField(default = uuid4(), max_length=500)
-    slug_fa = models.CharField(default = uuid4(), max_length=500)
-    slug_ar = models.CharField(default = uuid4(), max_length=500)
+    slug = models.CharField(default = uuid4(), max_length=500)
     date = models.DateField(verbose_name=_('date'))
 
     class Meta:
@@ -419,20 +367,13 @@ def path_save_portfolio(instance, filename):
     return path_save
 
 class Portfolio(models.Model):
-    title_en = models.CharField(max_length=500, verbose_name=_('title english'), unique=True)
-    title_fa = models.CharField(max_length=500, verbose_name=_('title persian'), unique=True)
-    title_ar = models.CharField(max_length=500, verbose_name=_('title arabian'), unique=True)
+    title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     date = models.DateField(verbose_name=_('date'))
     image = models.ImageField(upload_to=path_save_portfolio, verbose_name=_('avatar'))
-    address_en = models.CharField(max_length=500,verbose_name=_('address english'))
-    address_fa = models.CharField(max_length=500,verbose_name=_('address persian'))
-    address_ar = models.CharField(max_length=500,verbose_name=_('address arabian'))
-    description_en = RichTextUploadingField(null=True, blank=True, verbose_name=_('description english')) 
-    description_fa = RichTextUploadingField(null=True, blank=True, verbose_name=_('description persian')) 
-    description_ar = RichTextUploadingField(null=True, blank=True, verbose_name=_('description arabian')) 
-    slug_en = models.CharField(default=uuid4(), max_length=500,unique=True)
-    slug_fa = models.CharField(default=uuid4(), max_length=500,unique=True)
-    slug_ar = models.CharField(default=uuid4(), max_length=500,unique=True)
+    address = models.CharField(max_length=500,verbose_name=_('address'))
+    description = RichTextUploadingField(null=True, blank=True, verbose_name=_('description')) 
+    slug = models.CharField(default=uuid4(), max_length=500,unique=True)
+
 
     class Meta:
         verbose_name = _('Portfolio')
