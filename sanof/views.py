@@ -20,10 +20,9 @@ def change_language(request):
 
 def index(request):
     lang = translation.get_language()
-    print(lang)
-
-    sliders = Slider.objects.only('title_en', 'title_fa', 'title_ar', 'image', 
-                                                    'slug_en','slug_fa','slug_ar')
+    list = ['slug_'+lang, 'title_'+lang, 'image']
+    sliders = Slider.objects.only(*list)
+    
     categories = Category.objects.all()
     questions = Questions.objects.all()
 
@@ -39,8 +38,8 @@ def index(request):
 
 def services(request):
     lang = translation.get_language()
-    services=Services.objects.only('title_en', 'title_fa', 'title_ar', 'image', 
-                                   'slug_en','slug_fa','slug_ar')
+    list = ['slug_'+lang, 'title_'+lang, 'image']
+    services=Services.objects.only(*list)
 
     context = {
         'services':services,
@@ -54,8 +53,9 @@ def services(request):
 def service(request, slug):
     lang = translation.get_language()
     service = get_object_or_404(Services, slug_en=slug)
-    services = Services.objects.exclude(id=service.id).order_by('?')[:4].only('title_en', 'title_fa', 
-                                            'title_ar', 'image', 'slug_en','slug_fa','slug_ar')
+        list = ['slug_'+lang, 'title_'+lang, 'image']
+
+    services = Services.objects.exclude(id=service.id).order_by('?')[:4].only(*list)
 
     context = {
         'service':service,
@@ -73,8 +73,9 @@ def about(request):
    
 def portfolios(request):
     lang = translation.get_language()
-    portfolios = Portfolio.objects.only('title_en','title_fa','title_ar','date','image',
-                                        'slug_en','slug_fa','slug_ar')
+    list = ['slug_'+lang, 'title_'+lang, 'image', 'date]
+
+    portfolios = Portfolio.objects.only(*list)
 
     context = {
         'portfolios':portfolios,
@@ -134,8 +135,8 @@ def contact(request):
 
 def products(request):
     lang = translation.get_language()
-    products = Product.objects.select_related('category').only('title_en','title_fa','title_ar',
-                                'image', 'name_fa','name_en','name_ar', 'category')
+    list = ['name_'+lang, 'title_'+lang, 'image','category']
+    products = Product.objects.select_related('category').only(*list)
 
     context = {
         'products':products,
@@ -150,9 +151,8 @@ def product(request, slug):
     product = Product.objects.filter(Q(slug_en=slug)|Q(slug_fa=slug)|Q(slug_ar=slug)).first()
     if not product:
         raise  Http404()
-
-    products = Product.objects.filter(category=product.category).only('title_en','title_fa','title_ar',
-                                    'slug_en','slug_fa','slug_ar')
+    list = ['slug_'+lang, 'title_'+lang]
+    products = Product.objects.filter(category=product.category).only(*list)
     films = LinkAparat.objects.filter(wich_product = product).only('link','title')
 
     context = {
@@ -170,9 +170,9 @@ def categories(request, slug):
     category = get_object_or_404(Category, slug_en=slug)
     if not category:
         raise Http404()
-
-    products = Product.objects.filter(category = category).select_related('category').only(
-        'slug_fa','slug_en','slug_ar','name_fa','name_ar','name_en', 'category')
+            
+    list = ['slug_'+lang, 'name_'+lang, 'category']
+    products = Product.objects.filter(category = category).select_related('category').only(*list)
 
     context = {
         'products':products,
@@ -185,8 +185,9 @@ def categories(request, slug):
 
 def newses(request):
     lang = translation.get_language()
-    newses = News.objects.only('title_en','title_fa','title_ar', 'image', 
-                               'slug_en','slug_fa','slug_ar', 'date')
+            
+    list = ['slug_'+lang, 'title_'+lang, 'image', 'date]
+    newses = News.objects.only(*list)
 
     context = {
         'newses':newses,
@@ -202,8 +203,8 @@ def news(request, slug):
     if not news:
         raise  Http404()
 
-    newses = News.objects.exclude(id=news.id).order_by('?')[:4].only('title_en','title_fa','title_ar', 'image', 
-                                                                     'slug_en','slug_fa','slug_ar', 'date')
+    list = ['slug_'+lang, 'title_'+lang, 'image', 'date']
+    newses = News.objects.exclude(id=news.id).order_by('?')[:4].only(*list)
 
     context = {
         'news':news,
@@ -243,8 +244,9 @@ def certificates(request):
    
 def sliders(request):
     lang = translation.get_language()
-    sliders = Slider.objects.only('title_en','title_fa','title_ar', 
-                                                'image', 'slug_fa','slug_en','slug_ar')
+    
+    list = ['slug_'+lang, 'title_'+lang, 'image']
+    sliders = Slider.objects.only(*list)
 
     context = {
         'sliders':sliders,
@@ -259,7 +261,8 @@ def slider(request, slug):
     if not slider:
         raise Http404()
 
-    sliders = Slider.objects.exclude(id=slider.id).order_by('?')[:4].only('title_en','title_fa','title_ar', 'image', 'slug')
+    list = ['slug', 'title_'+lang, 'image']
+    sliders = Slider.objects.exclude(id=slider.id).order_by('?')[:4].only(*list)
    
     context = {
         'slider':slider,
