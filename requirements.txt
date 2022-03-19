@@ -8,3 +8,4 @@ jdatetime==3.7.0
 mysqlclient==2.1.0
 Pillow==8.4.0
 sqlparse==0.4.2
+django-modeltranslation==0.17.5
