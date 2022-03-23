@@ -1,13 +1,19 @@
 from django import template
 from sanof.models import Category, Slider, Product
 from django.http import request
+from django.utils import translation
+from django.db.models import OuterRef, Subquery, Prefetch
 
 register = template.Library()
 
 @register.inclusion_tag('include/navbar.html')
 def list_menu(request):
-    category = Category.objects.prefetch_related('all_product').only('name_en','name_fa','name_ar', 'slug_en', 'slug_fa','slug_ar', 'id')
-    sliders = Slider.objects.only('title_en','title_fa', 'title_ar', 'slug_en')
+    lang = translation.get_language()
+
+    fields = ['slug'+lang, 'name'+lang]
+    listss = ['title'+lang, 'slug'+lang]
+    category = Category.objects.prefetch_related(Prefetch('all_product',queryset=Products.objects.filter(show_navbar=True))).only(*fields)
+    sliders = Slider.objects.only(*lists)
     products = Product.objects.all()
     
     context = {
