@@ -111,9 +111,6 @@ else:
             'PASSWORD': ENV('DB_PASSWORD'),
             'PORT': ENV('DB_PORT'),
             'HOST': ENV('DB_HOST'),
-            'OPTIONS':{
-            	'sql_mode':'STRICT_ALL_TABLES'
-            }
         }
     }
 
