@@ -42,7 +42,7 @@
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:slider' slider.slug_fa %}">{{ slider.title_fa }}   </a>
+            <a href="{% url 'sanof:slider' slider.slug_en %}">{{ slider.title_fa }}   </a>
         </div>
 
 </div>
@@ -65,7 +65,7 @@
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:news' news.slug_fa %}"> {{ news.title_fa }}</a>
+            <a href="{% url 'sanof:news' news.slug_en %}"> {{ news.title_fa }}</a>
         </div>
 
 </div>
@@ -91,6 +91,13 @@
                         </div>
                     </div>        
                 </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  pull-right">
+                    <div id="EventAndNewsImage" class="DisplayEventandNewsGroupImageBox col-lg-10 col-lg-push-2 col-md-10 col-md-push-2 col-sm-10 col-sm-push-2 col-xs-12 ">
+
+                            <div class="col-lg-push-1 col-md-push-1 col-lg-11 col-md-11  col-sm-12 col-xs-12">
+                                <img alt="" title="" class="img-responsive img-rounded " src="{{ news.image.url }}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -107,7 +114,7 @@
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:service' service.slug_fa %}">{{ service.title_fa }}</a>
+            <a href="{% url 'sanof:service' service.slug_en %}">{{ service.title_fa }}</a>
         </div>
 
 </div>
@@ -133,11 +140,11 @@
     </div>
 
     <div class="SiteMapElement_2">
-            <a href="{% url 'sanof:portfolos' %}"> پروژه ها </a>
+            <a href="{% url 'sanof:portfolios' %}"> پروژه ها </a>
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:portfolo' portfolio.slug_fa %}">{{ portfolio.title_fa }}</a>
+            <a href="{% url 'sanof:portfolio' portfolio.slug_en %}">{{ portfolio.title_fa }}</a>
         </div>
 
 </div>
@@ -173,13 +180,13 @@
                 <div id="EventAndNewsImageBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
 
                         <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
-                            <a href="{% portfolio.image.url %}"  data-lightbox="{{ portfolio.title_fa }}" data-title="">
+                            <a href="{{ portfolio.image.url }}"  data-lightbox="{{ portfolio.title_fa }}" data-title="">
                                 <img src="{{ portfolio.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
                             </a>
                         </div>
                         {% for img in images %}
                             <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
-                                <a href="{% img.image.url %}" data-lightbox="" data-title="">
+                                <a href="{{ img.image.url }}" data-lightbox="" data-title="">
                                     <img src="{{ img.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
                                 </a>
                             </div>
