@@ -1,5 +1,5 @@
 from hashlib import new
-from django.core.checks import messages
+from django.contrib messages
 from django.core.files.base import ContentFile
 from django.http import request
 from django.http.response import Http404
