@@ -91,6 +91,13 @@
                         </div>
                     </div>        
                 </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  pull-right">
+                    <div id="EventAndNewsImage" class="DisplayEventandNewsGroupImageBox col-lg-10 col-lg-push-2 col-md-10 col-md-push-2 col-sm-10 col-sm-push-2 col-xs-12 ">
+
+                            <div class="col-lg-push-1 col-md-push-1 col-lg-11 col-md-11  col-sm-12 col-xs-12">
+                                <img alt="" title="" class="img-responsive img-rounded " src="{{ news.image.url }}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -133,11 +140,11 @@
     </div>
 
     <div class="SiteMapElement_2">
-            <a href="{% url 'sanof:portfolos' %}">  projects </a>
+            <a href="{% url 'sanof:portfolios' %}">  projects </a>
     </div>
 
         <div class="SiteMapElement_3">
-            <a href="{% url 'sanof:portfolo' portfolio.slug_en %}">{{ portfolio.title_en }}</a>
+            <a href="{% url 'sanof:portfolio' portfolio.slug_en %}">{{ portfolio.title_en }}</a>
         </div>
 
 </div>
