@@ -288,6 +288,14 @@
                                         <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_ar }}</a>
                                     </h3>
                                 </div>
+                                {% if forloop.counter > 8 %}
+                                 <div>
+                                    <h3 class="FontSize18 MarginTop5 MarginBottom10">
+                                        <span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+                                        <a href="{% url 'sanof:categories' cat.slug_en %}">المنتجات الأخرى لهذه المجموعة</a>
+                                    </h3>
+                            </div>
+                                {% endif %}
                             {% endfor %}        
                         </div>
                     </div>
