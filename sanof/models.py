@@ -466,16 +466,10 @@ class ContactUs(models.Model):
     class Meta:
         verbose_name = _('Contact Us')
         verbose_name_plural = _('Contact Us')
+    
     def __str__(self) -> str:
-        lang = translation.get_language()
-
-        if lang == 'fa':
-            return self.name_fa
-        elif lang == 'ar':
-            return self.name_ar
-        else:
-            return self.name_en
-
+        return self.name_fa
+       
     def m2j(self):
         return date2jalali(self.date)
 
