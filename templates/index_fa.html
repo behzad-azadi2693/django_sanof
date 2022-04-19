@@ -1,167 +1,309 @@
 {% extends 'base.html' %}
 {% load static %}
+ 
+{% block hreflang %}fa-ir{% endblock %} {% block lang %}fa{% endblock %}
 
-{% block title %} خانه{% endblock %}
+{% block title %}مشاهده محصول{% endblock %}
 
 {% block meta_description %}صفحه خانه وبسابت شرکت فنی مهندسی سانوف تولیدی، بازرگانی، فنی مهندسی کاشت بولت و آرماتور، افزایش مقطع، افزایش زیر بنا، ایجاد تراس، رفع ضعف های طراحی و اجرایی{% endblock meta_description %}
 {% block meta_keywords %}sanof,شرکت فنی مهندسی سانوف تولید، بازرگانی، فنی مهندسی کاشت بولت و آرمیچر، افزایش سطح مقطع، افزایش زیرساخت، احداث تراس، رفع نقاط ضعف طراحی و اجرایی، سانوف، شرکت فنی مهندسی سانوف، بتن آماده، استحکامات سنندج، بتن ریزی ساختمان و بتن ریزی بتن سنندج {% endblock meta_keywords %}
 
 {% block body %}
-<style>
-    #uploadImageLink:hover { text-decoration: none; }
-</style>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
 
-<div class="row Index_Class1">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class2">
-
-        <div id="carousel-example-generic" class="carousel " data-ride="carousel">
-          
-            <div class="carousel-inner">
-               
-
-                    <video autoplay="autoplay" preload="auto" loop muted class="img-responsive">
-                        <source src="{% static 'video/Final-FirstPage.mp4' %}" type="video/mp4" />
-                    </video>
-              
-            </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div><!-- /carousel -->
-</div>
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class5">
-    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePage">
-        <div>
-
-            <h1 style="font-size: 22px">
-                    <span class="glyphicon glyphicon-ok-sign IconFloatSetting"></span>
-                    SANOF درباره شرکت فنی مهندسی 
-            </h1>
-
-        </div>
-        <p>
-            مجموعه فوق فعالیت خود را در سال 80 تحت عنوان کلینیک ساختمانی فراگیر- مرکز مهندسی مصالح (عرضه کننده تجهیزات ومصالح ساختمانی روز دنیا ، ارائه دانش فنی وخدمات اجرایی) شروع به فعالیت نمود ودرسال 89 با تاسیس شرکت مهندسین سانوف – سهامی خاص ،با اتکا به دانش وامکانات موجود قدم در راه عمران وآبادانی کشورعزیزمان ایران برداشت تا سهمی هرچند کوچک در این زمینه داشته باشد .
-            <a href="/fa-IR/Company/">در این باره بیشتر بدانید...</a>
-        </p>
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:all_categories' %}">گروه های محصولات</a>
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePageInAnotherPage">
-        <div>
+    <div class="SiteMapElement_2">
+        <a href="{% url 'sanof:categories' product.category.slug_en %}">{{ product.category.name_fa }}</a>
+    </div>
 
-            <h4>
-                <span class="glyphicon glyphicon-ok-sign IconFloatSettingReverse" style="font-size: 22px;"></span>
-                 About Engineering Technical Company SANOF
+    <div class="SiteMapElement_3">
+        <a href="{% url 'sanof:product' product.slug_en %}">{{ product.name_fa }}</a>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProductDetail_Class2" style="border-bottom: solid 1px silver; border-top: solid 1px silver">
+
+        <div class="DisplayProductGroupBoxParent">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right text-right MarginTop10 MarginBottom5">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right">
+                    <div class="ProductOrGroupTitleMark">
+                        <span class="glyphicon glyphicon-stop IconFloatSetting DisplayProductDetail_Class4"></span>
+                        <h1 class="FontSize26 MarginTop5 MarginBottom5">
+                            {{ product.name_fa }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-right">
+            <div id="ProductExplain" class="ProductOrGroupExplainBox">
+                {{ product.description_fa|safe }}
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4  hidden-sm hidden-xs pull-right" >
+                <img src="{{ product.image.url }}" alt="{{ product.title_fa }}" title="{{ product.name_fa }}" class="img-responsive"  />
+        </div>
+
+    </div>
+</div>
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 25px;">
+
+    {% if product.consumption_fa %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-screenshot IconFloatSetting"></span>
+
+                    {{ product.name_fa }} روش مصرف  
+                </label>
+            </h2>
+        </div>
+        <div class="ProductDetail_Class2">
+            {{ product.consumption_fa|safe }}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right" style="padding-left: 0; padding-right: 0;">
+    {% if product.standard %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-list-alt IconFloatSetting"></span>
+                        مطابق با استانداردهای
+                </label>
+            </h2>
+        </div>
+    
+        <div class="ProductDetail_Class4">
+            {{ product.standard }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if product.type_category_fa %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-list-alt IconFloatSetting"></span>
+                    {{ product.name_fa }}  نوع بسته بندی 
+                </label>
+            </h2>
+        </div>
+    
+        <div class="ProductDetail_Class4">
+            {{ product.type_category_fa }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if product.consumption_level_fa %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-list-alt IconFloatSetting"></span>
+                    {{ product.name_fa }} میزان مصرف 
+                </label>
+            </h2>
+        </div>
+    
+        <div class="ProductDetail_Class4">
+            {{ product.consumption_level_fa|safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if product.maintenance_fa %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-screenshot IconFloatSetting"></span>
+
+                    {{ product.name_fa }}  شرایط نگهداری
+                </label>
+            </h2>
+        </div>
+        <div class="ProductDetail_Class2">
+            {{ product.maintenance_fa|safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if product.properties_fa %}
+        <div class="ProductPropertiesRowBox">
+            <div>
+                <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                    <label class="ProductDetail_Class1">
+                        <span class="glyphicon glyphicon-list-alt IconFloatSetting"></span>
+                        {{ product.name_fa }}  خواص و اثرات  
+                    </label>
+                </h2>
+            </div>
+        
+            <div class="ProductDetail_Class4">
+                {{ product.properties_fa|safe }}
+            </div>
+        </div>
+    {% endif %}
+
+
+    {% if product.specifications_fa %}
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h2 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                <label class="ProductDetail_Class1">
+                    <span class="glyphicon glyphicon-cog IconFloatSetting"></span>
+                    {{ product.name_fa }} مـوارد کـاربرد  
+                </label>
+            </h2>
+        </div>
+
+        <div class="ProductDetail_Class6">
+            {{ product.specifications_fa|safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if product.specifications_fa %}
+        <div class="ProductPropertiesRowBox">
+            <div>
+                <h3 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                    <label class="ProductDetail_Class1">
+                        <span class="glyphicon glyphicon-tags IconFloatSetting"></span>
+                        {{ product.name_fa }} مـشخصات فیزیکـی و شیمیایی  
+                    </label>
+                </h3>
+            </div>
+            <div class="ProductDetail_Class7" style="min-height: 230px;">
+                {{ product.specifications_fa|safe }}
+
+            </div>
+
+        </div>
+    {% endif %}
+    
+    {% if product.description_fa %}
+        <div class="ProductPropertiesRowBox">
+            <div>
+                <h3 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                    <label class="ProductDetail_Class1">
+                        <span class="glyphicon glyphicon-alert IconFloatSetting"></span>
+                        {{ product.name_fa }}  مـلاحظات
+                    </label>
+                </h3>
+            </div>
+            <div class="ProductDetail_Class7">
+                {{ product.description_fa|safe }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if product.safety_fa %}
+        <div class="ProductPropertiesRowBox">
+            <div>
+                <h3 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                    <label class="ProductDetail_Class1">
+                        <span class="glyphicon glyphicon-fire IconFloatSetting"></span>
+                        {{ product.name_fa }}  حفاظت و ایمنی 
+                    </label>
+                </h3>
+            </div>
+            <div class="ProductDetail_Class7">
+                {{ product.safety_fa|safe }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="ProductPropertiesRowBox">
+        <div>
+            <h4 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+            <label class="ProductDetail_Class1">
+                <span class="glyphicon glyphicon-barcode IconFloatSetting"></span>
+                سـایر مـحـصولات این گـروه
+            </label>
             </h4>
         </div>
-        <p>
-            The above group started its activity in 2002 under the name of Inclusive Construction Clinic - Materials Engineering Center (supplier of modern construction equipment and materials, providing technical knowledge 
-            <a href="/en-US/Company/">see more ...</a>
-        </p>
-    </div>
-
-    <div class="FirstPageContentBlock">
-
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/products.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات و محصولات " title="خدمات و محصولات "/>
-                <div class="GrayBoxLink">
-                    <h2 class="FontSize16">
-                        <span class="glyphicon glyphicon-qrcode IconFloatSetting"></span>
-                        <a href="{% url 'sanof:products' %}" >  محصولات </a>
-                    </h2>
-                </div>
+        <div class="ProductDetail_Class7">
+        {% for pro in products %}            
+            <div class="MarginBottom5">
+                <span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
+                <a href="{% url 'sanof:product' pro.slug_en %}">{{ pro.name_fa }}</a>
             </div>
-        </div>
+        {% endfor %}
+            <a class="SeeMoreProductFromThisGroupLink" href="{% url 'sanof:categories' product.category.slug_en  %}">سایر محصولات این گروه...</a>
 
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/news.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اخبـار و رویـداد ها" title="اخبـار و رویـداد ها"/>
-                <div class="GrayBoxLink">
-                    <h2 class="FontSize16">
-                        <span class="glyphicon glyphicon-globe IconFloatSetting"></span>
-                        <a href="{% url 'sanof:newses' %}"> اخبـار و رویـداد ها</a>
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/certificate.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اسـتاندارد ها و گـواهی نامه ها" title="اسـتاندارد ها و گـواهی نامه ها"/>
-                <div class="GrayBoxLink">
-                    <h2 class="FontSize16">
-                        <span class="glyphicon glyphicon-certificate IconFloatSetting"></span>
-                        <a href="{% url 'sanof:certificates' %}"> اسـتاندارد ها و گـواهی نامه ها</a>
-                    </h2>
-                </div>
-            </div>
         </div>
     </div>
 
-    <div class="FirstPageContentBlock">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/slider_4.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="مقالات فنی و مهندسی" title="مقالات فنی و مهندسی"/>
-                <div class="GrayBoxLink">
-                    <h3 class="FontSize16">
-                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
-                        <a href="{% url 'sanof:sliders' %}">مقالات فنی و مهندسی</a>
-                    </h3>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/portfolio.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="پروژه های انجام گرفته و در دست انجام" title="پروژه های انجام گرفته و در دست انجام"/>
-                <div class="GrayBoxLink">
-                    <h3 class="FontSize16">
-                        <span class="glyphicon glyphicon-cog IconFloatSetting"></span>
-                        <a href="{% url 'sanof:portfolios' %}">پروژه های انجام گرفته و در دست انجام</a>
-                    </h3>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/services.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات" title="خدمات"/>
-                <div class="GrayBoxLink">
-                    <h3 class="FontSize16">
-                        <span class="glyphicon glyphicon-blackboard IconFloatSetting"></span>
-                        <a href="{% url 'sanof:services' %}">خدمات</a>
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% for qst in questions %}
-
-<div id=RepetitveQuestion2 class="col-lg-10 col-md-10  col-lg-pull-1 col-md-pull-1 col-sm-12 col-xs-12 pull-right RepetitveQuestionBox">
-    <div id=RepetitveQuestionBox2 class="DisplayRepetitveQuestionBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
-        <div class="RepetitveQuestion">
-            {{ qst.question_en }}
-            <span class="glyphicon glyphicon-question-sign IconFloatSetting FontSize18"></span>
-        </div>
-        <br/>
-        <div class="RepetitveAnswer pull-right ">
-            <img src="{% static 'icons/questions.png' %}" class="QuestionPNGIcon" alt="icons"/>
-            {{ qst.answer_fa|safe }}
-        </div>
-    </div>
-</div>
-{% endfor %}
 
 </div>
 
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding-left: 0; padding-right: 0;">
+    <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12" style="padding-left: 0; padding-right: 0;">
+
+    
+        <div class="ProductPropertiesRowBox">
+            {% if product.catalog_fa %}
+                <div>
+                    <h5 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                        <label class="ProductDetail_Class1">
+                            <span class="glyphicon glyphicon-download-alt IconFloatSetting"></span>
+                            دانلود کاتالوگ
+                        </label>
+                    </h5>
+                </div>
+
+                <div class="ProductDetail_Class7" style="min-height: 150px;">
+                    <a target="_blank" rel="canonical" href="{{ product.catalog_fa.url }}">
+                        <h3 style="font-size: 16px;">
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                            {{ product.name_fa }}  برگه اطلاعات فنی
+                        </h3>
+                    </a>
+                    <br />
+                </div>
+            {% endif %}
+            {% if films %}
+                    <div class="ProductPropertiesRowBox">
+                        <div>
+                            <h5 style="font-size: 16px; line-height: 2; margin-bottom: 0;">
+                                <label class="ProductDetail_Class1">
+                                    <span class="glyphicon glyphicon-film IconFloatSetting"></span>
+                                    ویدئو
+                                </label>
+                            </h5>
+                        </div>
+
+                        <div class="ProductDetail_Class7" style="min-height: 100px;">
+                            {% for film in films %}
+                                <div id="{{ film.id }}"><script type="text/JavaScript" src="{{ film.link }}"></script></div>                                <br />
+                            {% endfor %}
+                        </div>
+                    </div>
+                
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
