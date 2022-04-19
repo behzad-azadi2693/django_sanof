@@ -284,7 +284,7 @@
 
                     <div id=ProductGroupProductBox32 class="ProductOrGroupLinkBoxParent DisplayProductGroupProductBox  col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-left">
                         <div class="ProductOrGroupLinkBox">
-                            {% for pro in cat.all_product.all %}
+                            {% for pro in cat.all_product.all|slice:":9" %}
                                 <div>
                                     <h3 class="FontSize18 MarginTop5 MarginBottom10">
                                         <span class="glyphicon glyphicon-ok-sign IconFloatSetting FontSize14"></span>
