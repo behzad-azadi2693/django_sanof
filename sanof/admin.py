@@ -8,19 +8,19 @@ from sanof.views import portfolios
 from .models import (
             Portfolio, Slider, Category, Product, News, 
             Services, Questions, Certificates, ContactUs,
-            PortfolioImages, LinkAparat
+            PortfolioImages, LinkAparat, CategoryCertificate,
+            CategoryPortfolio
         )
 
 admin.site.register(Slider)
+admin.site.register(CategoryPortfolio)
+admin.site.register(CategoryCertificate)
 admin.site.register(Category)
 admin.site.register(News)
 admin.site.register(Services)
+admin.site.register(Questions)
 admin.site.register(ContactUs)
 admin.site.register(LinkAparat)
-
-@admin.register(Questions)
-class QuestionsAdmin(admin.Modeladmin):
-    search_fields = ('name',)
 
 @admin.register(Certificates)
 class CertificatesAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
@@ -38,7 +38,7 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [
         LinkAparatAdmin,
     ]    
-    raw_id_fields = ('category',)
+
 
 class PortfolioImageInline(admin.TabularInline):
     model = PortfolioImages
