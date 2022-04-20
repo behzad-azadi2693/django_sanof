@@ -7,7 +7,7 @@ from .views import (
                 index, about, contact, certificates,notification, notifications,
                 products, product, newses, news, portfolios, portfolio, search,
                 categories, sliders, slider,services, service, all_categories,
-                change_language, contact_us
+                change_language, contact_us, portfolio_category
             )
 
 app_name = 'sanof'
@@ -27,6 +27,7 @@ urlpatterns = [
     path('about-us/', about, name='about'),
     path('portfolios/', portfolios, name='portfolios'),
     path('portfolio/<str:slug>/', portfolio, name='portfolio'),
+    path('portfolio/category/<str:slug>/', portfolio_category, name='portfolio_category'),
     path('categories/<str:slug>/', categories, name='categories'),
     path('categories/', all_categories, name='all_categories'),
     path('contact-us/', contact_us, name='contact_us'),
