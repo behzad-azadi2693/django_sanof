@@ -16,6 +16,7 @@
         {% elif portfolio %} نمونه کارها
         {% elif all_message %} پیغام ها
         {% elif all_category %} دسته بندی محصولات
+        {% elif category_portfolio %} دسته بندی نمونه کارها
         {% endif %}
 {% endblock %}
 
@@ -307,7 +308,7 @@
         {% endfor %}
     </div>
 </div>
-{% elif portfolios %}
+{% elif category_portfolio %}
 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
 
     <div class="SiteMapElement_1">
@@ -328,17 +329,50 @@
     </div>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProjectGroupBox">
-        {% for pro in portfolios %}
+        {% for pro in category_portfolios %}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
 
                     <img src="{{ pro.image.url }}" style="width:100%; height:300px" class="img-responsive GetProjectGroup_Class2" alt="Abadgaran Group Project" title="Abadgaran Group Project"/>
                     <div class="GrayBoxLink" style="padding-top: 10px;">
                         <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
-                        <a href="{% url 'sanof:portfolio' pro.slug_en %}">{{ pro.title_fa }}</a>
+                        <a href="{% url 'sanof:portfolio_category' pro.slug %}">{{ pro.name_fa }}</a>
                     </div>
                 </div>
             </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif portfolio %}
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">صفحه اصلی</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:portfolios' %}">پروژه ها</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:portfolio_category' this_category.slug %}">{{ this_category.name_fa }}</a>
+    </div>
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+         {{ this_category.name_fa }}
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProjectGroupBox">
+        {% for pro in portfolios %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="float: right;">
+            <span class="glyphicon glyphicon-ok IconFloatSetting"></span>
+            <a href="{% url 'sanof:portfolio' pro.slug_en %}">
+             {{ pro.title_fa }}
+            </a>
+        </div>
         {% endfor %}
     </div>
 </div>
