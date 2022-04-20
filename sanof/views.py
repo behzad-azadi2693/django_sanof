@@ -67,7 +67,7 @@ def services(request):
 def service(request, slug):
     lang = translation.get_language()
     service = get_object_or_404(Services, slug_en=slug)
-        list = ['slug_'+lang, 'title_'+lang, 'image']
+    list = ['slug_'+lang, 'title_'+lang, 'image']
 
     services = Services.objects.exclude(id=service.id).order_by('?')[:4].only(*list)
 
@@ -87,13 +87,11 @@ def about(request):
    
 def portfolios(request):
     lang = translation.get_language()
-    list = ['slug_'+lang, 'title_'+lang, 'image', 'date]
-
-    portfolios = Portfolio.objects.only(*list)
+    category_portfolios = CategoryPortfolio.objects.all()
 
     context = {
-        'portfolios':portfolios,
-        'portfolio':True,
+        'category_portfolios':category_portfolios,
+        'category_portfolio':True,
     }
    
     html = 'show_list_'+lang+'.html'
@@ -119,6 +117,20 @@ def portfolio(request, slug):
     }
   
     html = 'show_object_'+lang+'.html'
+    return render(request, html, context)
+
+def portfolio_category(request, slug):
+    lang = translation.get_language()
+    category = get_object_or_404(CategoryPortfolio, slug=slug)
+    portfolios = Portfolio.objects.filter(category=category).only('title_en','title_fa', 'title_ar', 'slug_en')
+
+    context = {
+        'portfolios':portfolios,
+        'this_category':category,
+        'portfolio':True
+    }
+  
+    html = 'show_list_'+lang+'.html'
     return render(request, html, context)
 
 def contact_us(request):
