@@ -5,7 +5,7 @@ from django.http import request
 from django.http.response import Http404
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from .forms import ContactForm
-from .models import LinkAparat, Portfolio, PortfolioImages, Slider, Category, Product, News, Services, Questions, Certificates,  ContactUs
+from .models import LinkAparat, Portfolio, PortfolioImages, Slider, Category, Product, News, Services, Questions, Certificates,  ContactUs, CategoryPortfolio, CategoryCertificate
 from django.utils.translation import gettext_lazy as _
 from django.utils import translation
 from django.db.models import Q
@@ -252,17 +252,27 @@ def all_categories(request):
     return render(request, html, context)
 
 
-def certificates(request):
+def category_certificate(request):
     lang = translation.get_language()
-    if lang == 'fa':
-        certificates = Certificates.objects.filter(show_fa=True)
-    if lang == 'ar':
-        certificates = Certificates.objects.filter(show_ar=True)
-    if lang == 'en':
-        certificates = Certificates.objects.filter(show_en=True)
+    categories_certificate = CategoryCertificate.objects.all()
+    
+    context = {
+        'categories_certificate':categories_certificate,
+        'category_certificate':True,
+    }
+    
+    html = 'show_list_'+lang+'.html'
+    return render(request, html, context)
+
+def certificates(request, slug):
+    lang = translation.get_language()
+    category = get_object_or_404(CategoryCertificate, slug = slug)
+    certificates = Certificates.objects.filter(category=category)
+    
 
     context = {
         'certificates':certificates,
+        'this_certificate':category,
         'certificate':True,
     }
     html = 'show_list_'+lang+'.html'
