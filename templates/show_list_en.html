@@ -16,6 +16,8 @@
         {% elif all_message %} Messages
         {% elif all_category %} all category
         {% elif category_portfolio %} portfolios category
+        {% elif category_certificate %} certificates category
+
         {% endif %}
 
 {% endblock %}
@@ -159,10 +161,10 @@
         </div>
     </div>
 </div>
-{% elif certificates %}
+{% elif category_certificate %}
 <div class="row GetAllCertificate_Class1">
     <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetAllCertificate_Class1">
-        <img src="{% static 'images/Certificatebig.png' %}" class="img-responsive" style="clear: both" alt="Abadgaran Group Certificates" title="Abadgaran Group Certificates"/>
+        <img src="{% static 'images/certificatebig.png' %}" class="img-responsive" style="clear: both" alt="sanof Group Certificates" title="sanof Group Certificates"/>
     </div>
 </div>
 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
@@ -172,10 +174,53 @@
     </div>
 
     <div class="SiteMapElement_2">
-            <a href="{% url 'sanof:certificates' %}">Standard</a>
+            <a href="{% url 'sanof:category_certificate' %}"> Standards </a>
     </div>
 
 
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+        Standard groups
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProjectGroupBox">
+        {% for pro in categories_certificate %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+
+                   
+                    
+                    <div class="GrayBoxLink" style="padding-top: 10px;">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:certificates' pro.slug %}">{{ pro.name_en }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif certificates %}
+<div class="row GetAllCertificate_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetAllCertificate_Class1">
+        <img src="{% static 'images/certificatebig.png' %}" class="img-responsive" style="clear: both" alt="Abadgaran Group Certificates" title="sanof Group Certificates"/>
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}">Home</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:category_certificate' %}">Standard</a>
+    </div>
+
+  <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:certificates' this_certificate.slug %}">{{ this_certificate.name_en }}</a>
+    </div>
 </div>
 
 <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
@@ -187,7 +232,7 @@
                 <a href="{{ certificate.image.url }}" data-lightbox="CertificateList" data-title="{{ certificate.title_en }} ">
                     <img src="{{ certificate.image.url }}" alt="{{ certificate.title_en }} " title="{{ certificate.title_en }}" class="CertificateThumbnail  img-responsive"/><br/>
                     <p class="CertificateExplainBox">
-                        {{ certificate.date }} {{ certificate.title_en }}
+                       {{ certificate.title_en }}
                     </p>
                 </a>
             </div>
