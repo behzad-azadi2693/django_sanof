@@ -16,6 +16,7 @@
         {% elif all_message %} رسائل
         {% elif all_category %} جميع الفئات
         {% elif category_portfolio %} فئة المحفظة
+        {% elif category_certificate %} تصنيف الشهادات
 
         {% endif %}
 {% endblock %}
@@ -157,10 +158,51 @@
         </div>
     </div>
 </div>
+{% elif category_certificate %}
+<div class="row GetAllCertificate_Class1">
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetAllCertificate_Class1">
+        <img src="{% static 'images/certificatebig.png' %}" class="img-responsive" style="clear: both" alt="sanof Group Certificates" title="sanof Group Certificates"/>
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
+
+    <div class="SiteMapElement_1">
+        <a href="{% url 'sanof:index' %}"> صفحه الرئيسية</a>
+    </div>
+
+    <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:category_certificate' %}"> المعايير والشهادات </a>
+    </div>
+
+
+</div>
+<div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+
+    <div id="ProjectGroupTitleBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="glyphicon glyphicon-stop IconFloatSetting GetProjectGroup_Class1"></span>
+       مجموعات قياسية
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-right DisplayProjectGroupBox">
+        {% for pro in categories_certificate %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
+
+                   
+                    
+                    <div class="GrayBoxLink" style="padding-top: 10px;">
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+                        <a href="{% url 'sanof:certificates' pro.slug %}">{{ pro.name_ar }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% elif certificates %}
 <div class="row GetAllCertificate_Class1">
     <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs GetAllCertificate_Class1">
-        <img src="{% static 'images/Certificatebig.png' %}" class="img-responsive" style="clear: both" alt="Abadgaran Group Certificates" title="Abadgaran Group Certificates"/>
+        <img src="{% static 'images/certificatebig.png' %}" class="img-responsive" style="clear: both" alt="Abadgaran Group Certificates" title="Abadgaran Group Certificates"/>
     </div>
 </div>
 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 SiteMapParent">
@@ -170,10 +212,12 @@
     </div>
 
     <div class="SiteMapElement_2">
-            <a href="{% url 'sanof:certificates' %}">المعايير والشهادات</a>
+            <a href="{% url 'sanof:category_certificate' %}">المعايير والشهادات</a>
     </div>
 
-
+ <div class="SiteMapElement_2">
+            <a href="{% url 'sanof:certificates' this_certificate.slug %}">{{ this_certificate.name_fa }}</a>
+    </div>
 </div>
 
 <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
@@ -185,7 +229,7 @@
                 <a href="{{ certificate.image.url }}" data-lightbox="CertificateList" data-title="{{ certificate.title_ar }}">
                     <img src="{{ certificate.image.url }}" alt="{{ certificate.title_ar }} " title="{{ certificate.title_ar }}" class="CertificateThumbnail  img-responsive"/><br/>
                     <p class="CertificateExplainBox">
-                        {{ certificate.date|to_jalali:'%Y/%m/%d' }} {{ certificate.title_ar }}
+                        {{ certificate.title_ar }}
                     </p>
                 </a>
             </div>
