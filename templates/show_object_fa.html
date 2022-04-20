@@ -164,36 +164,31 @@
                         </div>
                     </div>
 
-                    <div id=EventAndNewsMainExplain4422 class="EventAndNewsShortExplain col-lg-10 col-md-12 col-sm-12 col-xs-12  pull-right">
-                        <div id="EventAndNewsExplain" class="EventAndNewsExplainBox">
-                            {{ portfolio.description_fa|safe }}
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px; padding-right: 50px">
+</div>
 
-                <div id="EventAndNewsImageBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  pull-right">
+    <div class="col-lg-push-1 col-md-push-1 col-lg-10 col-md-10 col-sm-12 col-xs-12 MainContentBody">
+        <div class="CertificateBoxParent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  pull-right CertificateParentDiv">
+                    <a href="{{ portfolio.image.url }}" data-lightbox="CertificateList" data-title="{{ portfolio.id }}">
+                        <img src="{{ portfolio.image.url }}" alt="{{ portfolio.id }} " title="{{ portfolio.id }}" class="CertificateThumbnail  img-responsive"/><br/>
+                    </a>
+            </div>
+            {% for img in images %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  pull-right CertificateParentDiv">
+                    <a href="{{ img.image.url }}" data-lightbox="CertificateList" data-title="{{ img.id }}">
 
-                        <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
-                            <a href="{{ portfolio.image.url }}"  data-lightbox="{{ portfolio.title_fa }}" data-title="">
-                                <img src="{{ portfolio.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
-                            </a>
-                        </div>
-                        {% for img in images %}
-                            <div class="col-lg-2 col-md-4  col-sm-6 col-xs-12 pull-right">
-                                <a href="{{ img.image.url }}" data-lightbox="" data-title="">
-                                    <img src="{{ img.image.url }}" alt="" title="" class="EventAndNewsImageThumbnail  img-responsive"/>
-                                </a>
-                            </div>
-                        {% endfor %}
+                        <img src="{{ img.image.url }}" alt="{{ img.id }} " title="{{ img.id }}" class="CertificateThumbnail  img-responsive"/><br/>
+                       
+                    </a>
                 </div>
+            {% endfor %}
         </div>
     </div>
-</div>
 {% endif %}
 {% endblock %}
