@@ -200,6 +200,7 @@ def path_save_certificate(instance, filename):
     return path_save
 
 class Certificates(models.Model):
+        category = models.ForeignKey('CategoryPortfolio', related_name='all_category_portfolio',on_delete=models.CASCADE, default=1, verbose_name=_('category'))
     title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     image = models.ImageField(upload_to=path_save_certificate, verbose_name=_('image'))
     date = models.DateField(verbose_name=_('date'))
@@ -367,6 +368,7 @@ def path_save_portfolio(instance, filename):
     return path_save
 
 class Portfolio(models.Model):
+        category = models.ForeignKey('CategoryPortfolio', related_name='all_category_portfolio',on_delete=models.CASCADE, default=1, verbose_name=_('category'))        
     title = models.CharField(max_length=500, verbose_name=_('title'), unique=True)
     date = models.DateField(verbose_name=_('date'))
     image = models.ImageField(upload_to=path_save_portfolio, verbose_name=_('avatar'))
@@ -472,4 +474,66 @@ class ContactUs(models.Model):
        
     def m2j(self):
         return date2jalali(self.date)
+                                    
 
+def path_save_category_certificate(instance, filename):
+    path_save = os.path.join('categorycertificate', instance.name_en, filename)
+    return path_save
+
+class CategoryPortfolio(models.Model):
+    name_en = models.CharField(max_length=255, verbose_name=_('name'), unique=True)
+    image = models.ImageField(upload_to=path_save_category_certificate, verbose_name=_('image category portfolios'))
+    slug = models.CharField(default=uuid4(), max_length=500)
+
+    class Meta:
+        verbose_name = _('category portfolio')
+        verbose_name_plural = _('category portfolio')
+
+    def __str__(self) -> str:
+        lang = translation.get_language()
+
+        if lang == 'fa':
+            return self.name_fa
+        elif lang == 'ar':
+            return self.name_ar
+        else:
+            return self.name_en
+
+    def save(self, *args, **kwargs):
+        try:
+            slti = self.name.replace(' ','-')
+            self.slug = slti
+            this = CategoryPortfolio.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete()
+        except: 
+            pass
+
+        super(CategoryPortfolio, self).save(*args, **kwargs)
+
+class CategoryCertificate(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_('name'), unique=True)
+    slug = models.CharField(default=uuid4(), max_length=500)
+
+    class Meta:
+        verbose_name = _('category certificates')
+        verbose_name_plural = _('category certificates')
+
+    def __str__(self) -> str:
+        lang = translation.get_language()
+
+        if lang == 'fa':
+            return self.name_fa
+        elif lang == 'ar':
+            return self.name_ar
+        else:
+            return self.name_en
+
+    def save(self, *args, **kwargs):
+        try:
+            slti = self.name.replace(' ','-')
+            self.slug = slti
+        except: 
+            pass
+
+        super(CategoryCertificate, self).save(*args, **kwargs)
