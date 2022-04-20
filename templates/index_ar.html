@@ -49,7 +49,7 @@
         </div>
         <p>
             بدأت المجموعة المذكورة أعلاه نشاطها في عام ۲۰۰۲ تحت اسم عيادة البناء الشامل - - مركز هندسة المواد (مورد لمعدات ومواد البناء الحديثة ، ويوفر المعرفة التقنية والخدمات التنفيذية) وفي عام ۲۰۱۱ مع إنشاء شركة سانوف المهندسين - شركة مساهمة خاصة ، أخذ الاعتماد على المعرفة والمرافق المتاحة خطوة نحو تنمية بلدنا الحبيب إيران ليكون لها دور صغير في هذا المجال.
-            <a href="/fa-IR/Company/">تعرف على المزيد حول هذا ...</a>
+            <a href="{% url 'sanof:about' %}">تعرف على المزيد حول هذا ...</a>
         </p>
     </div>
 
@@ -63,7 +63,7 @@
         </div>
         <p>
             The above group started its activity in 2002 under the name of Inclusive Construction Clinic - Materials Engineering Center (supplier of modern construction equipment and materials, providing technical knowledge 
-            <a href="/en-US/Company/">see more ...</a>
+            <a href="{% url 'sanof:about' %}">see more ...</a>
         </p>
     </div>
 
@@ -101,7 +101,7 @@
                 <div class="GrayBoxLink">
                     <h2 class="FontSize16">
                         <span class="glyphicon glyphicon-certificate IconFloatSetting"></span>
-                        <a href="{% url 'sanof:certificates' %}"> المعايير والشهادات </a>
+                        <a href="{% url 'sanof:category_certificate' %}"> المعايير والشهادات </a>
                     </h2>
                 </div>
             </div>
@@ -114,8 +114,9 @@
                 <img src="{% static 'images/slider_4.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="مقالات فنية وهندسية" title="مقالات فنية وهندسية"/>
                 <div class="GrayBoxLink">
                     <h3 class="FontSize16">
-                        <span class="glyphicon glyphicon-paperclip IconFloatSetting">مقالات فنية وهندسية</span>
-                        <a href="{% url 'sanof:sliders' %}"></a>
+                        <a href="{% url 'sanof:sliders' %}">مقالات فنية وهندسية</a>
+                        <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
+
                     </h3>
                 </div>
             </div>
@@ -157,7 +158,7 @@
         </div>
         <br/>
         <div class="RepetitveAnswer pull-right ">
-            <img src="{% static 'icons/questions.png' %}" class="QuestionPNGIcon" alt=""/>
+            
             {{ qst.answer_ar|safe }}
         </div>
     </div>
