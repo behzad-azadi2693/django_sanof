@@ -15,14 +15,39 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class2">
 
         <div id="carousel-example-generic" class="carousel " data-ride="carousel">
-          
-            <div class="carousel-inner">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
 
-                    <video autoplay="autoplay" preload="auto" loop muted class="img-responsive">
-                        <source src="{% static 'video/Final-FirstPage.mp4' %}" type="video/mp4" />
-                    </video>
-              
+                    <img src="{% static 'images/slider-1.png' %}" class="img-responsive" alt="sanof">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+
+                            
+                            
+                            <br />
+                            
+                        </div>
+                    </div><!-- /header-text -->
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/slider-2.png' %}" class="img-responsive" alt="sanof">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+
+                         
+                        </div>
+                    </div><!-- /header-text -->
+                </div>
+               
             </div>
         </div>
         <!-- Controls -->
@@ -34,7 +59,6 @@
         </a>
     </div><!-- /carousel -->
 </div>
-
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Index_Class5">
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 pull-right AboutAbadgaranInHomePage">
         <div>
@@ -70,7 +94,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/products.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات و محصولات " title="خدمات و محصولات "/>
+                <img src="{% static 'images/products.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="خدمات و محصولات " title="خدمات و محصولات "/>
                 <div class="GrayBoxLink">
                     <h2 class="FontSize16">
                         <span class="glyphicon glyphicon-qrcode IconFloatSetting"></span>
@@ -83,7 +107,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/news.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اخبـار و رویـداد ها" title="اخبـار و رویـداد ها"/>
+                <img src="{% static 'images/news.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="اخبـار و رویـداد ها" title="اخبـار و رویـداد ها"/>
                 <div class="GrayBoxLink">
                     <h2 class="FontSize16">
                         <span class="glyphicon glyphicon-globe IconFloatSetting"></span>
@@ -95,7 +119,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/certificate.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="اسـتاندارد ها و گـواهی نامه ها" title="اسـتاندارد ها و گـواهی نامه ها"/>
+                <img src="{% static 'images/certificate.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="اسـتاندارد ها و گـواهی نامه ها" title="اسـتاندارد ها و گـواهی نامه ها"/>
                 <div class="GrayBoxLink">
                     <h2 class="FontSize16">
                         <span class="glyphicon glyphicon-certificate IconFloatSetting"></span>
@@ -109,7 +133,7 @@
     <div class="FirstPageContentBlock">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/slider_4.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="مقالات فنی و مهندسی" title="مقالات فنی و مهندسی"/>
+                <img src="{% static 'images/slider_4.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="مقالات فنی و مهندسی" title="مقالات فنی و مهندسی"/>
                 <div class="GrayBoxLink">
                     <h3 class="FontSize16">
                         <span class="glyphicon glyphicon-paperclip IconFloatSetting"></span>
@@ -121,7 +145,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/portfolio.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="پروژه های انجام گرفته و در دست انجام" title="پروژه های انجام گرفته و در دست انجام"/>
+                <img src="{% static 'images/portfolio.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="پروژه های انجام گرفته و در دست انجام" title="پروژه های انجام گرفته و در دست انجام"/>
                 <div class="GrayBoxLink">
                     <h3 class="FontSize16">
                         <span class="glyphicon glyphicon-cog IconFloatSetting"></span>
@@ -134,7 +158,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 FirstPageGrayBox">
-                <img src="{% static 'images/services.png' %}" style="width:100%" class="img-responsive Index_Class6" alt="خدمات" title="خدمات"/>
+                <img src="{% static 'images/services.png' %}" style="width:100%; height:200px" class="img-responsive Index_Class6" alt="خدمات" title="خدمات"/>
                 <div class="GrayBoxLink">
                     <h3 class="FontSize16">
                         <span class="glyphicon glyphicon-blackboard IconFloatSetting"></span>
